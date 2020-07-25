@@ -5,10 +5,31 @@ class Lesssons3 {
         System.out.println(t303.x + " X value");
         System.out.println(t303.x * t303.x + " square of X");
         System.out.println(t303.x * t303.x * t303.x + "  cube of X");
-        System.out.println((int) Math.cbrt((double) t303.x) + " another representation of cube of X");
+        System.out.println((int) Math.pow((double) t303.x, 2) + " another representation  square of X");
+        System.out.println((int) Math.cbrt((double) t303.x) + " another representation  cube of X");
         System.out.println(t304.LongNumber + " Max Long number");
-        System.out.println(t305.res);
-        int a;
+        System.out.println(t305.res1 - (int) (t305.res1) + " after dot");
+        t306.giveMeValue();
+        //for task 9 - cannot do answer;
+
+
+        /*
+        int x = 'r' - not compile; int can be only integer number;
+        char x = 123 -  compile; char can be representation in ASCII Table;
+        float x = 7.2 - not compile; we must specify float with "f" in last index
+        short x = 3L - not compile; short x = 3.0 == short x = 3l; what is error
+        double x = 0x123D  -compile;  it double value in 16 system
+        int x = 0x123f -compile;  it int value in 16 system
+        int x = 078 - not compile;  The octal numeral system don't have number 8
+        short x = 7 -  compile; all fine;
+        byte x = 255 - not compile;  byte cannot be large 127;
+        double x = 9 -compile; all fine;
+        int x = 5.5 - not compile; int only integers numbers
+        int x = 5 -compile; all file
+
+
+
+         */
 
 
     }
@@ -51,10 +72,37 @@ class Lesssons3 {
 
     static class t305 {
         static float A = 1245.554f; // kg of apples
-        static double B = 256.3785d; // kg of aplles
+        static double B = 256.3785d; // kg of apples
+        static double res1 = A * B;
         // if i right understand, i need to print value after dot ;
-        static BigDecimal A1 =  new BigDecimal(A);
-        static BigDecimal B2 = new BigDecimal(B);
+    }
+
+    static class t306 {
+        static char[] i = {'+', '!', '?'};
+
+        static void giveMeValue() {
+            for (char d : i) {
+                System.out.format("The char is %s", d);
+                System.out.println();
+            }
+        }
+
+    }
+
+    static  class t308{
+        static int x = 121;
+
+        static void GiveMeBinary(){
+            System.out.println(Integer.toBinaryString(x));
+        }
+        static void GiveMeOctal(){
+            System.out.println(Integer.toOctalString(x));
+        }
+        static void GiveMeHexadecimal(){
+            System.out.println(Integer.toHexString(x));
+        }
+
+
     }
 
 
