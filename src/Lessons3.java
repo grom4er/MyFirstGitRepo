@@ -1,3 +1,5 @@
+import java.math.BigDecimal;
+
 class Lesssons3 {
     public static void main(String[] args) {
         System.out.println(t303.x + " X value");
@@ -50,8 +52,9 @@ class Lesssons3 {
     static class t305 {
         static float A = 1245.554f; // kg of apples
         static double B = 256.3785d; // kg of aplles
-        // if i right understand, i need to print value after dot;
-        static double res = (A - (int)A) * (B - (int)B);
+        // if i right understand, i need to print value after dot ;
+        static BigDecimal A1 =  new BigDecimal(A);
+        static BigDecimal B2 = new BigDecimal(B);
     }
 
 
