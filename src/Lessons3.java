@@ -89,16 +89,18 @@ class Lesssons3 {
 
     }
 
-    static  class t308{
+    static class t308 {
         static int x = 121;
 
-        static void GiveMeBinary(){
+        static void GiveMeBinary() {
             System.out.println(Integer.toBinaryString(x));
         }
-        static void GiveMeOctal(){
+
+        static void GiveMeOctal() {
             System.out.println(Integer.toOctalString(x));
         }
-        static void GiveMeHexadecimal(){
+
+        static void GiveMeHexadecimal() {
             System.out.println(Integer.toHexString(x));
         }
 
