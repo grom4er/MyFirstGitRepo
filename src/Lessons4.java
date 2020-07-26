@@ -55,9 +55,7 @@ public class Lessons4 {
          t405.GiveMeBooleanValue(bOne,bTwo);
          bTwo = true;
         t405.GiveMeBooleanValue(bOne,bTwo);
-        //task 6
-        System.out.println("Task 6");
- /*
+         /*
         a. true || false = true
         b. false && true = false
         c. !true || 1 >= 0   = true (work 1>=0)
@@ -67,6 +65,11 @@ public class Lessons4 {
         i. 1> = 1 || false = true
         g. true && 5 - 5 = error
 */
+        //task 6
+        System.out.println("Task 6");
+        //task 7
+        System.out.println("Task 7");
+
     }
 
     static class t401 {
