@@ -27,7 +27,7 @@ class Lesssons3 {
         int x = 5.5 - not compile; int only integers numbers
         int x = 5 -compile; all file
         */
-         //for task 9 
+        //for task 9
         int c; // it just primitive type java. We 100% know how many bytes it takes. And we always can see what in "box"
         Integer c1; // it is a object. c1 don't know what he have, he only have reference to object.
         // Difference:
@@ -36,84 +36,84 @@ class Lesssons3 {
         Integer testD3 = 1; Integer testD4;
         testD4 = testD3; // we can do that operation, but we ONLY give reference to object;
         //Steak: in Steak we have primitive data and reference to object;
-        
-    }
-
-
-    }
-
-    class t301 {
-        byte n1 = 127;
-        int n2 = 255;
-        byte res = (byte) (n1 - n2);
-        Byte res2 = (byte) (n2 - n1);
-        /*
-        Byte have value from -128 to 127 integers;
-        Memory take 8 bit
-         */
-    }
-
-    class t302 {
-        int n1 = -32768;
-        int n2 = 32768;
-        Short res = (short) (n1 + n2);
-        /*
-        Short have value from -32768 to 32767 integers;
-        Memory take 16 bit
-         */
-    }
-
-    static class t303 {
-        static int x = 1200;
-        /*
-        Int have value from -2147483648 to 2147483647 integers;
-        Memory take 32 bit
-         */
-
-    }
-
-    static class t304 {
-        static long LongNumber = Long.MAX_VALUE;
-        //can be use for implement id humans in all Planet for all time;
-
-    }
-
-    static class t305 {
-        static float A = 1245.554f; // kg of apples
-        static double B = 256.3785d; // kg of apples
-        static double res1 = A * B;
-        // if i right understand, i need to print value after dot ;
-    }
-
-    static class t306 {
-        static char[] i = {'+', '!', '?'};
-
-        static void giveMeValue() {
-            for (char d : i) {
-                System.out.format("The char is %s", d);
-                System.out.println();
-            }
-        }
-
-    }
-
-    static class t308 {
-        static int x = 121;
-
-        static void GiveMeBinary() {
-            System.out.println(Integer.toBinaryString(x));
-        }
-
-        static void GiveMeOctal() {
-            System.out.println(Integer.toOctalString(x));
-        }
-
-        static void GiveMeHexadecimal() {
-            System.out.println(Integer.toHexString(x));
-        }
-
 
     }
 
 
 }
+
+class t301 {
+    byte n1 = 127;
+    int n2 = 255;
+    byte res = (byte) (n1 - n2);
+    Byte res2 = (byte) (n2 - n1);
+        /*
+        Byte have value from -128 to 127 integers;
+        Memory take 8 bit
+         */
+}
+
+class t302 {
+    int n1 = -32768;
+    int n2 = 32768;
+    Short res = (short) (n1 + n2);
+        /*
+        Short have value from -32768 to 32767 integers;
+        Memory take 16 bit
+         */
+}
+
+class t303 {
+    static int x = 1200;
+        /*
+        Int have value from -2147483648 to 2147483647 integers;
+        Memory take 32 bit
+         */
+
+}
+
+ class t304 {
+    static long LongNumber = Long.MAX_VALUE;
+    //can be use for implement id humans in all Planet for all time;
+
+}
+
+ class t305 {
+    static float A = 1245.554f; // kg of apples
+    static double B = 256.3785d; // kg of apples
+    static double res1 = A * B;
+    // if i right understand, i need to print value after dot ;
+}
+
+ class t306 {
+    static char[] i = {'+', '!', '?'};
+
+    static void giveMeValue() {
+        for (char d : i) {
+            System.out.format("The char is %s", d);
+            System.out.println();
+        }
+    }
+
+}
+
+ class t308 {
+    static int x = 121;
+
+    static void GiveMeBinary() {
+        System.out.println(Integer.toBinaryString(x));
+    }
+
+    static void GiveMeOctal() {
+        System.out.println(Integer.toOctalString(x));
+    }
+
+    static void GiveMeHexadecimal() {
+        System.out.println(Integer.toHexString(x));
+    }
+
+
+}
+
+
+
