@@ -37,16 +37,16 @@ public class Lesson5 {
         System.out.println("______________________________");
         //Task 4
         System.out.println("Task 4");
-        System.out.println("First answer is: One of the statements isn't true." );
+        System.out.println("First answer is: One of the statements isn't true.");
         // (a != b) is false  a == 11, b == 11; They are a==b;
         // second answer is : in fist if change (a != b) to (a == b);
-
+        System.out.println("______________________________");
         //Task 5
         System.out.println("Task 5");
 
         int num = 8;
         String.format("Number is %s 10", num > 10 ? "greater than" : "less than or equal to");
-
+        System.out.println("______________________________");
         //Task 6
         System.out.println("Task 6");
         System.out.println("Enter any number.");
@@ -81,7 +81,7 @@ public class Lesson5 {
         }
 
 
-
+        System.out.println("______________________________");
         //Task 7
         System.out.println("Task 7");
         System.out.println("Enter the day of the week.");
