@@ -1,20 +1,24 @@
 import java.math.BigDecimal;
+import java.sql.SQLOutput;
 
 class Lesssons3 {
     public static void main(String[] args) {
-        System.out.println(t303.x + " X value");
-        System.out.println(t303.x * t303.x + " square of X");
-        System.out.println(t303.x * t303.x * t303.x + "  cube of X");
-        System.out.println((int) Math.pow((double) t303.x, 2) + " another representation  square of X");
-        System.out.println((int) Math.cbrt((double) t303.x) + " another representation  cube of X");
-        System.out.println(t304.LongNumber + " Max Long number");
-        System.out.println(t305.res1 - (int) (t305.res1) + " after dot");
-        t306.giveMeValue();
+        System.out.println(T303.x + " X value");
+        System.out.println(T303.x * T303.x + " square of X");
+        System.out.println(T303.x * T303.x * T303.x + "  cube of X");
+        System.out.println((int) Math.pow((double) T303.x, 2) + " another representation  square of X");
+        System.out.println((int) Math.cbrt((double) T303.x) + " another representation  cube of X");
+        System.out.println(T304.LongNumber + " Max Long number");
+        System.out.println(T305.res1 - (int) (T305.res1) + " after dot");
+        T306.GiveMeValue();
+        T308.GiveMeBinary();
+        T308.GiveMeOctal();
+        T308.GiveMeHexadecimal();
        
 
 
         /*
-        int x = 'r' - not compile; int can be only integer number;
+        int x = 'r' -  compile; char can be representation in ASCII Table;
         char x = 123 -  compile; char can be representation in ASCII Table;
         float x = 7.2 - not compile; we must specify float with "f" in last index
         short x = 3L - not compile; short x = 3.0 == short x = 3l; what is error
@@ -35,14 +39,22 @@ class Lesssons3 {
         testD2 = testD1; // we can do that operation, and we give number to box testD2;
         Integer testD3 = 1; Integer testD4;
         testD4 = testD3; // we can do that operation, but we ONLY give reference to object;
-        //Steak: in Steak we have primitive data and reference to object;
+        //Stack: in stack we have primitive data and reference to object;
+        // Heap: in heap we have dynamic memory for object
+        System.out.println(Integer.SIZE + "bits of Integer");
+        System.out.println(Character.SIZE+ "bits of Character");
+        System.out.println(Double.SIZE+ "bits of Double");
+        System.out.println(Long.SIZE+ "bits of Long");
+        System.out.println(Byte.SIZE+ "bits of Byte");
+        System.out.println(Short.SIZE+ "bits of Short");
+        System.out.println(Float.SIZE+ "bits of Float");
 
     }
 
 
 }
 
-class t301 {
+class T301 {
     byte n1 = 127;
     int n2 = 255;
     byte res = (byte) (n1 - n2);
@@ -53,7 +65,7 @@ class t301 {
          */
 }
 
-class t302 {
+class T302 {
     int n1 = -32768;
     int n2 = 32768;
     Short res = (short) (n1 + n2);
@@ -63,7 +75,7 @@ class t302 {
          */
 }
 
-class t303 {
+class T303 {
     static int x = 1200;
         /*
         Int have value from -2147483648 to 2147483647 integers;
@@ -72,23 +84,23 @@ class t303 {
 
 }
 
- class t304 {
+ class T304 {
     static long LongNumber = Long.MAX_VALUE;
     //can be use for implement id humans in all Planet for all time;
 
 }
 
- class t305 {
+ class T305 {
     static float A = 1245.554f; // kg of apples
     static double B = 256.3785d; // kg of apples
     static double res1 = A * B;
     // if i right understand, i need to print value after dot ;
 }
 
- class t306 {
+ class T306 {
     static char[] i = {'+', '!', '?'};
 
-    static void giveMeValue() {
+    static void GiveMeValue() {
         for (char d : i) {
             System.out.format("The char is %s", d);
             System.out.println();
@@ -97,20 +109,49 @@ class t303 {
 
 }
 
- class t308 {
+ class T308 {
     static int x = 121;
 
     static void GiveMeBinary() {
-        System.out.println(Integer.toBinaryString(x));
+
+        System.out.println(Integer.toBinaryString(x) + " first representation of x in binary");
+        //another way:
+        // (from CS50)
+        // 128 64 32  16 8 4 2 1
+        //  0  1  1   1  1 0 0 1
+        String BinaryRepresentationFirstPart = "0b";
+        String BinaryRepresentationSecondPart = "01111001";
+        System.out.println(BinaryRepresentationFirstPart
+                + BinaryRepresentationSecondPart
+                + " second representation of x in binary");
+
     }
 
     static void GiveMeOctal() {
-        System.out.println(Integer.toOctalString(x));
+
+        System.out.println(Integer.toOctalString(x) + " first representation of x in octal");
+        //another way:
+        // 121/8 = 15 ; 15 / 8 = (1)
+        //  (1)              (7)
+       String OctalRepresentationFirstPart = "0";
+       String SecondRepresentationFirstPart ="171";
+        System.out.println(OctalRepresentationFirstPart
+                +SecondRepresentationFirstPart
+                + " second representation of x in octal");
     }
 
     static void GiveMeHexadecimal() {
-        System.out.println(Integer.toHexString(x));
+        System.out.println(Integer.toHexString(x) + " first representation of x in Hexadecimal");
+        //another way:
+        //121/16 = 7
+        //  9
+        String HexadecimalRepresentationFirstPart = "0x";
+        String HexadecimalRepresentationSecondPart = "79";
+        System.out.println(HexadecimalRepresentationFirstPart
+                +HexadecimalRepresentationSecondPart + " second representation of x in Hexadecimal");
+
     }
+
 
 
 }

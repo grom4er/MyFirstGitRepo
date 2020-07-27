@@ -4,12 +4,13 @@ public class Lesson5 {
     public static void main(String[] args) {
         //Task 1
         System.out.println("Task 1");
-        //if will be false. b = 6;
-
+        System.out.println("if will be false. b = 6");
+        System.out.println("______________________________");
         //Task 2
         System.out.println("Task 2");
-        // compile error. Cannot be c = d++; Must be c == d++;
-        // if be right,will be else statment;
+        System.out.println("compile error. Cannot be c = d++; Must be c == d++ \n " +
+                "if be right,will be else statment;");
+        System.out.println("______________________________");
         //Task 3
         System.out.println("Task 3");
         int a = 34, b = 2, c = 78;
@@ -24,8 +25,6 @@ public class Lesson5 {
         //another way
         // System.out.println(Math.max(Math.max(a,b), Math.max(b,c) ));
         //find min
-
-
         if (a < b && a < c) {
             System.out.println("min is A");
         } else if (b < a && b < c) {
@@ -35,11 +34,12 @@ public class Lesson5 {
         }
         //another way
         // System.out.println(Math.min(Math.min(a,b), Math.min(b,c) ));
-
+        System.out.println("______________________________");
         //Task 4
         System.out.println("Task 4");
-        //First answer is "All statements are true."
-        // second answer is : in fist if change (b >= a) to (b == a);
+        System.out.println("First answer is: One of the statements isn't true." );
+        // (a != b) is false  a == 11, b == 11; They are a==b;
+        // second answer is : in fist if change (a != b) to (a == b);
 
         //Task 5
         System.out.println("Task 5");
@@ -52,7 +52,6 @@ public class Lesson5 {
         System.out.println("Enter any number.");
         Scanner sc = new Scanner(System.in);
         int month = sc.nextInt();
-        int i = 1;
         switch (month) {
             case 1:
             case 2:
@@ -75,6 +74,7 @@ public class Lesson5 {
                 break;
             case 12:
                 System.out.println("Winter");
+                break;
             default:
                 System.out.println("You do mistake,");
 
