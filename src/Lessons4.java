@@ -5,9 +5,18 @@ public class Lessons4 {
     static void relax(boolean a){
         System.out.println(a);
     }
-
-
-
+    static void forTask6(int a, int b){
+        System.out.print(a&b);
+        System.out.println(" this is a&b");
+        System.out.print(a|b);
+        System.out.println(" this is a|b");
+        System.out.print(~a);
+        System.out.println(" this is ~a");
+        System.out.print(~b);
+        System.out.println(" this is ~b");
+        System.out.print(a^b);
+        System.out.println(" this is a^b");
+    }
 
     public static void main(String[] args) {
         System.out.println(t401.a + " " + t401.b + " " + t401.c + " " + t401.d + " "
@@ -67,8 +76,17 @@ public class Lessons4 {
 */
         //task 6
         System.out.println("Task 6");
+        int at6 = 4; int b46 = 3;
+        forTask6(at6,b46);
+
         //task 7
         System.out.println("Task 7");
+        int at7 = 10;
+        at7 = at7<<1;
+        at7 = at7 >>2;
+        at7 = -5;
+        at7 =at7 >>>1;
+
 
     }
 
