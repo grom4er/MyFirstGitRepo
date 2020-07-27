@@ -10,7 +10,7 @@ class Lesssons3 {
         System.out.println(t304.LongNumber + " Max Long number");
         System.out.println(t305.res1 - (int) (t305.res1) + " after dot");
         t306.giveMeValue();
-        //for task 9 - cannot do answer;
+       
 
 
         /*
@@ -26,10 +26,18 @@ class Lesssons3 {
         double x = 9 -compile; all fine;
         int x = 5.5 - not compile; int only integers numbers
         int x = 5 -compile; all file
-
-
-
-         */
+        */
+         //for task 9 
+        int c; // it just primitive type java. We 100% know how many bytes it takes. And we always can see what in "box"
+        Integer c1; // it is a object. c1 don't know what he have, he only have reference to object.
+        // Difference:
+        int testD1 = 0; int testD2;
+        testD2 = testD1; // we can do that operation, and we give number to box testD2;
+        Integer testD3 = 1; Integer testD4;
+        testD4 = testD3; // we can do that operation, but we ONLY give reference to object;
+        //Steak: in Steak we have primitive data and reference to object;
+        
+    }
 
 
     }
