@@ -45,7 +45,7 @@ public class Lesson5 {
         System.out.println("Task 5");
 
         int num = 8;
-        String.format("Number is %s 10", num > 10 ? "greater than" : "less than or equal to");
+        System.out.format("Number is %s 10", num > 10 ? "greater than" : "less than or equal to");
         System.out.println("______________________________");
         //Task 6
         System.out.println("Task 6");
