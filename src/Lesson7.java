@@ -30,13 +30,13 @@ public class Lesson7 {
         int[] table = new int[10];
         while (userNumber != 0) {
             if (++table[userNumber % 10] > 1) {
-                System.out.println("No");
+                System.out.println("Yes");
                 return;
             }
             userNumber /= 10;
 
         }
-        System.out.println("Yes");
+        System.out.println("No");
     }
 
     static void CheckPopulation(int BirthRate, int DeathRate, int Population, int Years) {
