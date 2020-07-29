@@ -1,6 +1,5 @@
-import java.sql.SQLOutput;
 import java.util.Scanner;
-import java.util.stream.IntStream;
+
 
 public class Lesson7 {
     static void CreateTreeWithWidth(int WidthTree) {
