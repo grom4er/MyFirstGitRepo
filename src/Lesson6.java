@@ -2,11 +2,17 @@ import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class Lesson6 {
-    static int[] CreateArray(int min, int max) {
-        // don't work for min == 0;
-        int[] array = new int[max];
-        for (int i = min-1 ; i < array.length; i++) {
-            array[i] = i + 1;
+    static int[] CreateArray(int FromIndex, int toIndex) {
+        int [] array;
+        if(FromIndex <0){
+             array = new int[toIndex+Math.abs(FromIndex)+1];
+        }
+        else {
+            array = new int[toIndex];
+        }
+        for (int i = 0 ; i < array.length; i++) {
+            array[i] = FromIndex;
+            FromIndex++;
         }
         return array;
     }
