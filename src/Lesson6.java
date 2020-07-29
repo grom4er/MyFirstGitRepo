@@ -3,8 +3,9 @@ import java.util.stream.IntStream;
 
 public class Lesson6 {
     static int[] CreateArray(int min, int max) {
+        // don't work for min == 0;
         int[] array = new int[max];
-        for (int i = min; i < array.length; i++) {
+        for (int i = min-1 ; i < array.length; i++) {
             array[i] = i + 1;
         }
         return array;
@@ -47,7 +48,7 @@ public class Lesson6 {
         int[] ArrayForTask2 = Lesson6.CreateArray(1, 10);
         int[] ArrayForTask2Answ = new int[10];
         int count = 0;
-        for (int i = ArrayForTask2.length - 1; i > 0; i--) {
+        for (int i = ArrayForTask2.length - 1; i >= 0; i--) {
             ArrayForTask2Answ[count] = ArrayForTask2[i];
             count++;
         }
