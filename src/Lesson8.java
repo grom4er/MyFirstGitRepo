@@ -77,16 +77,14 @@ public class Lesson8 {
     }
 
     static void canItTringleBe(int firstSide, int secondSide, int thirdSide) {
-
-        if (firstSide + secondSide < thirdSide
-                || firstSide + thirdSide < secondSide
-                || secondSide + thirdSide < firstSide
-               ) {
-
-            System.out.println("It Tringle  impossible");
-            return;
-        } else {
+        if (firstSide + secondSide > thirdSide
+                || firstSide + thirdSide > secondSide
+                || secondSide + thirdSide > firstSide
+        ) {
             System.out.println("It Tringle be");
+
+        } else {
+            System.out.println("It Tringle  impossible");
         }
     }
 
