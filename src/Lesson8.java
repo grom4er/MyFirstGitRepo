@@ -8,7 +8,7 @@ public class Lesson8 {
     static String userChoice = null;
     static int count = 1;
     static int Subparagraph = 0;
-    static int userNumber;
+
 
     static void parsingAskMethod(String MethodName, String userCase) {
         if (userCase == null) {
