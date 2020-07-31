@@ -1,4 +1,6 @@
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 // yes / no case insensitive
 
@@ -7,6 +9,8 @@ public class Lesson8 {
     static String userChoice = null;
     static int count = 1;
     static int Subparagraph = 0;
+    static String forTask3;
+    static int forTask3Int;
 
 
     static void parsingAskMethod(String MethodName, String userCase) {
@@ -36,7 +40,7 @@ public class Lesson8 {
                 return false;
             default:
                 System.out.printf("You answer %s is wrong. " +
-                        "\nMust be only Y or N.\n" +
+                        "\nMust be only  one symbol  Y or N.\n" +
                         "Please, try again.", userChoice);
                 System.out.println();
         }
@@ -58,10 +62,17 @@ public class Lesson8 {
         System.out.printf("Sum from 1 to %d, is: \n", number);
         return sum; //IntStream.range(1,number+1).sum()
     }
-
+    static double checkDigitDouble(){
+        if (scN.hasNextDouble()) {
+            return scN.nextDouble();
+        }
+        System.out.println("Sorry, it not double number. Try again!");
+        scN.next();
+        return checkDigitDouble();
+    }
     static int checkDigit() {
         if (scN.hasNextInt()) {
-            return scN.nextInt();
+            return Integer.parseInt(scN.next());
         }
         System.out.println("Sorry, it not int number. Try again!");
         scN.next();
@@ -87,6 +98,93 @@ public class Lesson8 {
         }
     }
 
+    static boolean numberBellowOrMoreZero(int number) {
+        return number > 0 ? true : false;
+    }
+
+    static void upgradeNumberBellowOrMoreZero(int number) {
+        System.out.printf("Number %d is %s \n", number
+                , numberBellowOrMoreZero(number) == true
+                        ? "More  zero" : "Bellow  zero or is zero");
+    }
+
+    static void moreUpgradeNumberBellowOrMoreZero(int number) {
+        upgradeNumberBellowOrMoreZero(number);
+        System.out.printf("And number is %s \n", number % 2 == 0 ? "Odd" : "Even");
+    }
+
+    static void overloadMethodForTask3(int number) {
+        System.out.printf("I will square you number. \n " +
+                "brrrr.....\n" +
+                "brrrrr...." +
+                "scquare of %d is %d", number, number * number);
+    }
+
+    static void overloadMethodForTask3(int fNumb, int sNumb) {
+        System.out.printf("I will multiply you number. \n " +
+                "brrrr.....\n" +
+                "brrrrr...." +
+                "multiply is %d \n", fNumb * sNumb);
+    }
+
+    static void overloadMethodForTask3(double fNumb, int sNumb) {
+        System.out.print("I will multiply you number. \n " +
+                "brrrr.....\n" +
+                "brrrrr...." +
+                "multiply is \n" +  fNumb * ((double)sNumb));
+    }
+
+    static void overloadMethodForTask3(double fNumb, double sNumb) {
+        System.out.print("I will multiply you number. \n " +
+                "brrrr.....\n" +
+                "brrrrr...." +
+                "multiply is \n" + fNumb * sNumb);
+    }
+    static void overloadMethodForTask3(String answ) {
+        try {
+            if(answ.toLowerCase().equals("start")){
+                forNnums();
+                return;
+            }
+            else if(Integer.parseInt(answ) > 0){
+                forNnums(Integer.parseInt(answ));
+                return;
+            }
+        }
+        catch (Exception e){
+            System.out.println("You answer is not integer more zero or word \"start\" \n" +
+                    "Please try again ");
+            forTask3 = scN.next();
+            overloadMethodForTask3(forTask3);
+
+        }
+
+
+
+    }
+    static void forNnums(){
+        System.out.println("If you stop, just write 0");
+        System.out.println("Write fist number:");
+        int sum = 0;
+        int temp = 0;
+        while (true){
+            temp = checkDigit();
+            sum+=temp;
+            if(temp == 0) break;
+            System.out.println("Write another number or zero for over");
+        }
+        System.out.println("The sum of you numbers is " + sum);
+    }
+    static void forNnums(int countValues){
+        int [] array = new int[countValues];
+        System.out.println("Please, write numbers:");
+        for(int i = 0; i <array.length; i++){
+            array[i] = checkDigit();
+        }
+        System.out.println("Sum of you digits is " + Arrays.stream(array).sum());
+
+    }
+
 
     public static void main(String[] args) {
         //task 1
@@ -95,6 +193,7 @@ public class Lesson8 {
             userChoice = null;
             parsingAskMethod(nameTask(1, ++Subparagraph), userChoice);
             userChoice = scN.next();
+            scN.skip("\n");
             if (yesOrNo(userChoice)) {
                 switch (count) {
                     case 1:
@@ -127,6 +226,95 @@ public class Lesson8 {
             count++;
         }
         System.out.println("______________________________");
+        //task 2
+        count = 1;
+        Subparagraph = 0;
+        System.out.println("Task 2");
+        while (count <= 3) {
+            userChoice = null;
+            parsingAskMethod(nameTask(2, ++Subparagraph), userChoice);
+            userChoice = scN.next();
+            scN.skip("\n");
+            if (yesOrNo(userChoice)) {
+                switch (count) {
+                    case 1:
+                        System.out.println("Let check. You number is more then 0? \n" + "" +
+                                "Write please number:");
+                        System.out.printf("The answer is %b \n", numberBellowOrMoreZero(checkDigit()));
+                        break;
+
+                    case 2:
+                        System.out.println("Let check. You number is more then 0? \n" +
+                                "But now we upgrade our answer.\n" +
+                                "Write please number:");
+                        upgradeNumberBellowOrMoreZero(checkDigit());
+                        break;
+                    case 3:
+                        System.out.println("Let check. You number is more then 0? \n" +
+                                "But now we upgrade our answer more.\n" +
+                                "Write please number:");
+                        moreUpgradeNumberBellowOrMoreZero(checkDigit());
+                        break;
+                }
+            }
+            count++;
+        }
+        System.out.println("______________________________");
+
+        //task 3
+        count = 1;
+        Subparagraph = 0;
+        System.out.println("Task 3");
+        while (count <= 5) {
+            userChoice = null;
+            parsingAskMethod(nameTask(3, ++Subparagraph), userChoice);
+            userChoice = scN.next();
+            scN.skip("\n");
+            if (yesOrNo(userChoice)) {
+                switch (count) {
+                    case 1:
+                        System.out.println("I want to square you number. Give me it");
+                        overloadMethodForTask3(checkDigit());
+                        System.out.println();
+                        break;
+                    case 2:
+                        System.out.println("I want to multiply you two number. Give me it");
+                        System.out.println("Please, write first number :");
+                        int fNum = checkDigit();
+                        System.out.println("Please, write second number :");
+                        int sNum = checkDigit();
+                        overloadMethodForTask3(fNum, sNum);
+                        System.out.println();
+                        break;
+                    case 3:
+                        System.out.println("I want to multiply you two number.\n" +
+                                "Give me it. But first can be float number ");
+                        System.out.println("Please, write first number :");
+                        double fNumD = checkDigitDouble();
+                        System.out.println("Please, write second number :");
+                        sNum = checkDigit();
+                        overloadMethodForTask3(fNumD, sNum);
+                        System.out.println();
+                        break;
+                    case 4:
+                        System.out.println("I want to multiply you two number. \n " +
+                                "Give me it. But both can be float number ");
+                        System.out.println("Please, write first number :");
+                        fNumD = checkDigitDouble();
+                        System.out.println("Please, write second number :");
+                        double sNumD = checkDigitDouble();
+                        overloadMethodForTask3(fNumD, sNumD);
+                        break;
+                    case  5: System.out.println("I want to sum you o numbers. \n");
+                        System.out.println("Please, write how many numbers you want. Or write \"start\" if you not know count of you numbers ");
+                        forTask3 = scN.next();
+                        overloadMethodForTask3(forTask3);
+                        break;
+                }
+            }
+            count++;
+        }
+
 
     }
 }
