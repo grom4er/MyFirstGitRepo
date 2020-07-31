@@ -4,13 +4,16 @@ import java.util.stream.IntStream;
 
 // yes / no case insensitive
 
+// 1.2 указать диапазаон и до минус числа
+// Для чисел с запятой добавить считывание "." или указать что запятая
+
 public class Lesson8 {
     static Scanner scN = new Scanner(System.in);
     static String userChoice = null;
     static int count = 1;
     static int Subparagraph = 0;
     static String forTask3;
-    static int forTask3Int;
+
 
 
     static void parsingAskMethod(String MethodName, String userCase) {
