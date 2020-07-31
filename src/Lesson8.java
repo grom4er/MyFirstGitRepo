@@ -82,7 +82,6 @@ public class Lesson8 {
                 || secondSide + thirdSide > firstSide
         ) {
             System.out.println("It Tringle be");
-
         } else {
             System.out.println("It Tringle  impossible");
         }

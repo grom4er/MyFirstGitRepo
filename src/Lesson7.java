@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 
 public class Lesson7 {
+    static Scanner sc = new Scanner(System.in);
     static void CreateTreeWithWidth(int WidthTree) {
         String star = "*";
         String space = " ";
@@ -54,6 +55,16 @@ public class Lesson7 {
     }
 
 
+    static int checkDigit() {
+        if (sc.hasNextInt()) {
+            return sc.nextInt();
+        }
+        System.out.println("Sorry, it not int number. Try again!");
+        sc.next();
+        return checkDigit();
+    }
+
+
     public static void main(String[] args) {
         //task 1
         System.out.println("Task 1");
@@ -64,8 +75,7 @@ public class Lesson7 {
 
         //task 2
         System.out.println("Task 2");
-        Scanner sc = new Scanner(System.in);
-        int UserNumber = sc.nextInt();
+        int UserNumber = checkDigit();
         int NaturalOrder = 1;
         int MaxNaturalOrder = NaturalOrder;
         while (UserNumber >= MaxNaturalOrder) {
