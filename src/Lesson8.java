@@ -81,7 +81,7 @@ public class Lesson8 {
         if (firstSide + secondSide < thirdSide
                 || firstSide + thirdSide < secondSide
                 || secondSide + thirdSide < firstSide
-                || thirdSide + secondSide < firstSide) {
+               ) {
 
             System.out.println("It Tringle  impossible");
             return;
