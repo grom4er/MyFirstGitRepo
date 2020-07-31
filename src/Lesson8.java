@@ -1,9 +1,8 @@
 import java.util.Scanner;
 
-//
+// yes / no case insensitive
 
 public class Lesson8 {
-    static Scanner scW = new Scanner(System.in);
     static Scanner scN = new Scanner(System.in);
     static String userChoice = null;
     static int count = 1;
@@ -25,7 +24,8 @@ public class Lesson8 {
                 Task, Subparagraph);
     }
 
-    static boolean YesorNo(String userChoice) {
+    static boolean yesOrNo(String userChoice) {
+
         userChoice = userChoice.toUpperCase();
         switch (userChoice) {
             case "Y":
@@ -40,8 +40,8 @@ public class Lesson8 {
                         "Please, try again.", userChoice);
                 System.out.println();
         }
-        userChoice = scW.nextLine();
-        return YesorNo(userChoice);
+        userChoice = scN.nextLine();
+        return yesOrNo(userChoice);
     }
 
     static void printDigits() {
@@ -60,8 +60,7 @@ public class Lesson8 {
     }
 
     static int checkDigit() {
-        boolean temp = scN.hasNextInt();
-        if (temp) {
+        if (scN.hasNextInt()) {
             return scN.nextInt();
         }
         System.out.println("Sorry, it not int number. Try again!");
@@ -79,20 +78,15 @@ public class Lesson8 {
 
     static void canItTringleBe(int firstSide, int secondSide, int thirdSide) {
 
-        if (firstSide + secondSide < thirdSide) {
-            System.out.println("It Tringle not impossible");
-            return;
-        } else if (firstSide + thirdSide < secondSide) {
-            System.out.println("It Tringle not impossible");
-            return;
-        } else if (secondSide + thirdSide < firstSide) {
-            System.out.println("It Tringle not impossible");
-            return;
-        } else if (thirdSide + secondSide < firstSide) {
-            System.out.println("It Tringle not impossible");
+        if (firstSide + secondSide < thirdSide
+                || firstSide + thirdSide < secondSide
+                || secondSide + thirdSide < firstSide
+                || thirdSide + secondSide < firstSide) {
+
+            System.out.println("It Tringle  impossible");
             return;
         } else {
-            System.out.println("It Tringle is impossible");
+            System.out.println("It Tringle be");
         }
     }
 
@@ -100,11 +94,11 @@ public class Lesson8 {
     public static void main(String[] args) {
         //task 1
         System.out.println("Task 1");
-        while (count < 4) {
+        while (count <= 4) {
             userChoice = null;
             parsingAskMethod(nameTask(1, ++Subparagraph), userChoice);
-            userChoice = scW.nextLine();
-            if (YesorNo(userChoice)) {
+            userChoice = scN.next();
+            if (yesOrNo(userChoice)) {
                 switch (count) {
                     case 1:
                         printDigits();
@@ -129,7 +123,8 @@ public class Lesson8 {
                         sNum = checkDigit();
                         System.out.println("Please, write third number :");
                         int tNum = checkDigit();
-                        canItTringleBe(fNum,sNum,tNum);
+                        canItTringleBe(fNum, sNum, tNum);
+                        break;
                 }
             }
             count++;
