@@ -119,7 +119,7 @@ count = 4;
         firstString = checkString();
         System.out.println("Resault is: " + reverse1(firstString)); //first method
         firstString = checkString();
-        System.out.println("Resault is: " + reverse2(firstString)); //first method
+        System.out.println("Resault is: " + reverse2(firstString)); //second method
 
 
 
