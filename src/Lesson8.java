@@ -58,6 +58,10 @@ public class Lesson8 {
     }
 
     static int sumOfDigits(int number) {
+        if(number<=0){
+            System.out.printf("Sorry, you number %d don't correct. Must be More 1", number);
+        }
+
         int sum = 0;
         for (int i = 1; i <= number; i++) {
             sum += i;
@@ -91,18 +95,22 @@ public class Lesson8 {
     }
 
     static void canItTringleBe(int firstSide, int secondSide, int thirdSide) {
+        if(firstSide <=0 || secondSide <= 0 || secondSide <=0 ){
+            System.out.println("Triangle with you numbers can is impossible");
+            return;
+        }
         if (firstSide + secondSide > thirdSide
                 || firstSide + thirdSide > secondSide
                 || secondSide + thirdSide > firstSide
         ) {
-            System.out.println("It Tringle be");
+            System.out.println("Triangle with you numbers can be");
         } else {
-            System.out.println("It Tringle  impossible");
+            System.out.println("Triangle with you numbers can is impossible");
         }
     }
 
     static boolean numberBellowOrMoreZero(int number) {
-        return number > 0 ? true : false;
+        return number >= 0 ? true : false;
     }
 
     static void upgradeNumberBellowOrMoreZero(int number) {
@@ -247,13 +255,13 @@ public class Lesson8 {
                         break;
 
                     case 2:
-                        System.out.println("Let check. You number is more then 0? \n" +
+                        System.out.println("Let check. You number is more then 0 or is 0? \n" +
                                 "But now we upgrade our answer.\n" +
                                 "Write please number:");
                         upgradeNumberBellowOrMoreZero(checkDigit());
                         break;
                     case 3:
-                        System.out.println("Let check. You number is more then 0? \n" +
+                        System.out.println("Let check. You number is more then 0 or is 0? \n" +
                                 "But now we upgrade our answer more.\n" +
                                 "Write please number:");
                         moreUpgradeNumberBellowOrMoreZero(checkDigit());
