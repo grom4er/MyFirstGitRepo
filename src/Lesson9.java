@@ -36,6 +36,13 @@ public class Lesson9 {
         }
     }
 
+    static String checkStringReverse() {
+        System.out.println("Write word");
+        String res = sc.nextLine();
+        return res;
+    }
+
+
     static String delString1(String nameOne, String nameTwo) {
         char[] arrayOne = nameOne.toCharArray();
         String resOne = "";
@@ -73,9 +80,10 @@ public class Lesson9 {
         }
         return res;
     }
-    static String reverse2(String name){
+
+    static String reverse2(String name) {
         StringBuffer r = new StringBuffer(name);
-        return ""+r.reverse();
+        return "" + r.reverse();
     }
 
 
@@ -85,12 +93,12 @@ public class Lesson9 {
                 /*
                 int count = 0;
 String st = "Java"; - String pull; count ++;
-String st2 = new String("Java"); - String pull; count++;
+String st2 = new String("Java"); - String was in pull;
 String st3 = st2.intern(); - String was in pull;
 String st4 = "java";  - String pull; count++;
 String st = null; null
 String st6 = new String("JAVA"); - String pull; count ++;
-count = 4;
+count = 3;
          */
 
         //task 2
@@ -116,11 +124,10 @@ count = 4;
         //task 4
         System.out.println("Task 4");
         System.out.println("Let reverse!");
-        firstString = checkString();
+        firstString = checkStringReverse();
         System.out.println("Resault is: " + reverse1(firstString)); //first method
-        firstString = checkString();
+        firstString = checkStringReverse();
         System.out.println("Resault is: " + reverse2(firstString)); //second method
-
 
 
     }
