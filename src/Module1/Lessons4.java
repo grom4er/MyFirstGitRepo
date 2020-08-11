@@ -1,3 +1,5 @@
+package Module1;
+
 public class Lessons4 {
     static void GiveMeBooleanValue(boolean a, boolean b) {
         System.out.format("Answer a&&b  is %b\n", a && b);
