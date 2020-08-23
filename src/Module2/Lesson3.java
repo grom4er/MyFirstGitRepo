@@ -23,6 +23,8 @@ public class Lesson3 {
         programmer2.workInfo();
         programmer3.getName();
         doctor1.speak();
+        doctor2.think();
+        builder1.build();
 
         /*
         Question:  Can an abstract class be instantiated?
