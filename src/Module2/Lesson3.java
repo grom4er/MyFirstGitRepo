@@ -97,11 +97,19 @@ abstract class Employee {
     void speak() {
         System.out.printf("Hi, my name is %s. I'm %d years old.", getName(), getAge());
     }
+
     abstract void workInfo();
 
 }
 
-class Doctor extends Employee{
+class Doctor extends Employee implements Intellectual {
+
+
+    @Override
+    public void think() {
+        System.out.println("Thinks");
+    }
+
 
     Doctor(String name, int age) {
         super(name, age);
@@ -109,40 +117,62 @@ class Doctor extends Employee{
 
     @Override
     void workInfo() {
-    heal();
+        heal();
     }
-    void heal(){
+
+    void heal() {
         System.out.println("Heal");
     }
 
 
 }
 
-class Builder extends Employee{
+class Builder extends Employee implements Strongman {
     Builder(String name, int age) {
         super(name, age);
+    }
+
+    @Override
+    public void drag() {
+        System.out.println("Drags");
     }
 
     @Override
     void workInfo() {
         build();
     }
-    void build(){
+
+    void build() {
         System.out.println("build");
     }
 }
 
-class Programmer extends Employee{
+class Programmer extends Employee implements Intellectual {
     Programmer(String name, int age) {
         super(name, age);
     }
+
 
     @Override
     void workInfo() {
         programming();
     }
-    void programming(){
+
+    void programming() {
         System.out.println("programming");
     }
 
+    @Override
+    public void think() {
+        System.out.println("Thinks");
+    }
+}
+
+
+interface Intellectual {
+    void think();
+}
+
+interface Strongman {
+    void drag();
 }
