@@ -48,7 +48,7 @@ public class Lesson3 {
         indicates to the class which methods must be used.
         What can be implemented as the creation of a contract, which the class must perform.
         A class can have several implementations of the interface.
-        Also everything in the interface is implicitly always public final, which does not allow to implement encapsulation.
+        Also all variables in the interfaces have an implicit public static final call and all methods of public, which does not allow to implement encapsulation.
 
         Abstract class:
         The abstract class describes what the class can be and what behavior it can have.
