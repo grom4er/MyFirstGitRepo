@@ -132,10 +132,7 @@ class Builder extends Employee implements Strongman {
         super(name, age);
     }
 
-    @Override
-    public void drag() {
-        System.out.println("Drags");
-    }
+
 
     @Override
     void workInfo() {
@@ -162,17 +159,19 @@ class Programmer extends Employee implements Intellectual {
         System.out.println("programming");
     }
 
-    @Override
-    public void think() {
-        System.out.println("Thinks");
-    }
+
 }
 
 
 interface Intellectual {
-    void think();
+     default void think(){
+         System.out.println("Thinks");
+     };
 }
 
 interface Strongman {
-    void drag();
+
+   default void drag(){
+       System.out.println("Drags");
+   };
 }
