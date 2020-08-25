@@ -24,7 +24,8 @@ public class Lesson3 {
         programmer3.getName();
         doctor1.speak();
         doctor2.think();
-        builder1.build();
+        builder1.drag();
+        programmer1.think();
 
         /*
         Question:  Can an abstract class be instantiated?
@@ -97,7 +98,7 @@ abstract class Employee {
     }
 
     void speak() {
-        System.out.printf("Hi, my name is %s. I'm %d years old.", getName(), getAge());
+        System.out.printf("Hi, my name is %s. I'm %d years old.\n", getName(), getAge());
     }
 
     abstract void workInfo();
@@ -105,14 +106,6 @@ abstract class Employee {
 }
 
 class Doctor extends Employee implements Intellectual {
-
-
-    @Override
-    public void think() {
-        System.out.println("Thinks");
-    }
-
-
     Doctor(String name, int age) {
         super(name, age);
     }
@@ -126,15 +119,12 @@ class Doctor extends Employee implements Intellectual {
         System.out.println("Heal");
     }
 
-
 }
 
 class Builder extends Employee implements Strongman {
     Builder(String name, int age) {
         super(name, age);
     }
-
-
 
     @Override
     void workInfo() {
@@ -166,14 +156,21 @@ class Programmer extends Employee implements Intellectual {
 
 
 interface Intellectual {
-     default void think(){
-         System.out.println("Thinks");
-     };
+    default void think() {
+        System.out.println("Thinks");
+    }
 }
 
 interface Strongman {
-
-   default void drag(){
-       System.out.println("Drags");
-   };
+    default void drag() {
+        System.out.println("Drags");
+    }
 }
+
+
+/* 0 11111
+   0 01111
+   0 11111
+
+
+ */
