@@ -23,7 +23,6 @@ public class Lessons6 {
         //  Home.forTaskA(5); // for task A
         //  Home.forTaskB(4,2,10); // for task B
         // Home.forTaskC(32.9); // for task C
-
     }
 
 
@@ -249,3 +248,30 @@ class Home {
 
     }
 }
+
+/*
+Question
+1) Why has object-oriented programming replaced procedural programming?
+Answer:
+(3) OOP reduces the complexity of software development
+
+Question
+2) Which of the following is an advantage of OOP?
+Answer:
+(3) increase the speed of program execution
+
+Question
+3) Which of the following is a disadvantage of OOP?
+Answer:
+(2) unification of programs through standard components
+
+Question
+4) What are the benefits of providing access to class properties only through its methods?
+Answer:
+(1) you can control the correct values of the class fields
+
+Question
+5) Which statements about encapsulation are correct?
+Answer:
+(1) allows you to control the correct values ​​of the class fields
+ */
