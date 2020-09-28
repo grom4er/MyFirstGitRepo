@@ -20,7 +20,7 @@ public class Lessons6 {
         }
         // must stop dublicate code ((
         //  Home.showAllBuilding(); //- if need check all.
-        //  Home.forTaskA(5); // for task A
+        // Home.forTaskA(5); // for task A
         //  Home.forTaskB(4,2,10); // for task B
         // Home.forTaskC(32.9); // for task C
     }
