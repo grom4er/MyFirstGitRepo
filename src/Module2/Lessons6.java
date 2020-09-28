@@ -1,7 +1,7 @@
 package Module2;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+
 
 /**
  * (we can change any Parameter)
@@ -14,9 +14,9 @@ import java.util.Arrays;
 public class Lessons6 {
 
     public static void main(String[] args) {
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 100; i++) {
             Home home = new Home((randomOfMax(200)), randomOfMax(60.0), randomOfMax(14), randomOfMax(6), randomStreet(), randomNameBuild(), randomOfMax(25, 100));
-            home.addArrayOfHome(home);
+            home.listOfHome(home);
         }
         // must stop dublicate code ((
         //  Home.showAllBuilding(); //- if need check all.
@@ -64,15 +64,15 @@ class Home {
     private String street;
     private String buildingType;
     private int lifeTime;
-    private static ArrayList<Home> arrayOfHome = new ArrayList<>();
+    private static ArrayList<Home> listOfHomes = new ArrayList<>();
 
 
-    public ArrayList<Home> getArrayOfHome() {
-        return arrayOfHome;
+    public ArrayList<Home> getListOfHome() {
+        return listOfHomes;
     }
 
     public void setArrayOfHome(ArrayList<Home> arrayOfHome) {
-        this.arrayOfHome = arrayOfHome;
+        this.listOfHomes = arrayOfHome;
     }
 
     public Home() {
@@ -80,7 +80,7 @@ class Home {
 
     static void showAllBuilding() {
         Home home = new Home();
-        for (Home homeTest : home.getArrayOfHome()) {
+        for (Home homeTest : home.getListOfHome()) {
             System.out.println(homeTest);
         }
     }
@@ -176,11 +176,11 @@ class Home {
         this.lifeTime = lifeTime;
     }
 
-    public void addArrayOfHome(Home homeArray) {
-        ArrayList<Home> tempArray = new ArrayList<>();
-        tempArray = homeArray.getArrayOfHome();
-        tempArray.add(homeArray);
-        homeArray.setArrayOfHome(tempArray);
+    public void listOfHome(Home homeList) {
+        ArrayList<Home> tempList = new ArrayList<>();
+        tempList = homeList.getListOfHome();
+        tempList.add(homeList);
+        homeList.setArrayOfHome(tempList);
     }
 
     public static void forTaskA(int findRoom) {
@@ -189,7 +189,7 @@ class Home {
             return;
         }
         ArrayList<Home> tempArray = new ArrayList<>();
-        for (Home tempHome : arrayOfHome) {
+        for (Home tempHome : listOfHomes) {
             if (tempHome.getNumbersOfRoom() == findRoom) {
                 tempArray.add(tempHome);
             }
@@ -209,17 +209,17 @@ class Home {
             System.out.println("Sorry, you number not found");
             return;
         }
-        ArrayList<Home> tempArray = new ArrayList<>();
-        for (Home tempHome : arrayOfHome) {
+        ArrayList<Home> homeList = new ArrayList<>();
+        for (Home tempHome : listOfHomes) {
             if (tempHome.getNumbersOfRoom() == findRoom && (tempHome.getFloor() >= fromFlorr && tempHome.getFloor() <= toFloor)) {
-                tempArray.add(tempHome);
+                homeList.add(tempHome);
             }
         }
-        if (tempArray.size() == 0) {
+        if (homeList.size() == 0) {
             System.out.println("Sorry, you number not found");
         } else {
             System.out.println("We find rooms. List of them:");
-            for (Home tempHome : tempArray) {
+            for (Home tempHome : homeList) {
                 System.out.println(tempHome);
             }
         }
@@ -231,17 +231,17 @@ class Home {
             System.out.println("Sorry, you number not found");
             return;
         }
-        ArrayList<Home> tempArray = new ArrayList<>();
-        for (Home tempHome : arrayOfHome) {
+        ArrayList<Home> homeList = new ArrayList<>();
+        for (Home tempHome : listOfHomes) {
             if (tempHome.getArea() > area) {
-                tempArray.add(tempHome);
+                homeList.add(tempHome);
             }
         }
-        if (tempArray.size() == 0) {
+        if (homeList.size() == 0) {
             System.out.println("Sorry, you number not found");
         } else {
             System.out.println("We find apartments with an area exceeding the specified one. List of them:");
-            for (Home tempHome : tempArray) {
+            for (Home tempHome : homeList) {
                 System.out.println(tempHome);
             }
         }
@@ -273,5 +273,5 @@ Answer:
 Question
 5) Which statements about encapsulation are correct?
 Answer:
-(1) allows you to control the correct values ​​of the class fields
+(1) allows you to control the correct values of the class fields
  */

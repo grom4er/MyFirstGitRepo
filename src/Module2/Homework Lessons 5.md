@@ -31,7 +31,7 @@
 
   - *What is **".gitignore"** file for?*
 >
->       Answer: gitignore file is a plain text file where each line contains a pattern for files/directories to ignore
+>       Answer: gitignore is a plain text file where each line contains a pattern for files/directories to ignore
 >
   - *What do you think about **"git diff"?***
 >
@@ -46,7 +46,7 @@
 >>
 >> git checkout -b [new_branch]  - new branch to be created.
 >>
->> git checkout [commit SSH code]  - new branch to be created.
+>> git checkout [commit SSH code]  - change HEAD of commit.
 >
   - *What is **"git push"?***
 >
