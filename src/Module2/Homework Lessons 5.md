@@ -3,6 +3,7 @@
   - *Question: What is **git**?*
 >
 >     Answer: Git is a distributed version-control system for tracking changes in source code during software development.
+>     It is designed for coordinating work among programmers, but it can be used to track changes in any set of files
  
  
   - *Question: Git has three main **states** that your files can be in. List and explain.*
@@ -17,7 +18,7 @@
 
   - *Question: What does the **"git add"** command do?*
 >
->       Answer: This command updates the index using the current content found in the working tree
+>       Answer: This command updates the index using the current content found in the working tree, to prepare the content staged for the next commit
 
   - *What is the **"git clone"** command for?*
 >
@@ -25,7 +26,7 @@
 
   - *What will **"git status"** seem to you?*
 >
->       Answer: Displays paths that have differences between the index file and the current HEAD commit.
+>       Answer: Displays paths that have differences between the index file and the current HEAD commit, paths that have differences between the working tree and the index file, and paths in the working tree that are not tracked by Git
 
 
   - *What is **".gitignore"** file for?*
@@ -38,12 +39,14 @@
 >
   - *What is **"git checkout"?** How this command can be used?*
 >
->       Answer: Switch branches or restore working tree files.
+>       Answer: Switch branches, restore working tree files or return to the specified commit.
 >> We can use it **for**:
 >>
 >>git checkout [branch] - for change working tree.
 >>
 >> git checkout -b [new_branch]  - new branch to be created.
+>>
+>> git checkout [commit SSH code]  - new branch to be created.
 >
   - *What is **"git push"?***
 >
