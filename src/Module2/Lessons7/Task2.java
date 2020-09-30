@@ -1,58 +1,160 @@
 package Module2.Lessons7;
 
 interface garageFunctionMiniGarage {
-    default boolean enter(Car car) {
-        venicleEnter(car);
-        return true;
-    }
+    boolean enterGarage(Car car);
 
-    default boolean leave(Car car) {
-        vehicleLeave(car);
-        return true;
-    }
+    boolean leaveGarage();
 
-    default void venicleEnter(Vehicle vehicle) {
+    default void vehicleEnterText(Vehicle vehicle) {
         System.out.println(vehicle.getClass().getSimpleName() + " is parking");
     }
 
-    default void vehicleLeave(Vehicle vehicle) {
-        System.out.println(vehicle.getClass().getSimpleName() + " is out of parking");
+    default void vehicleLeaveText(String name) {
+        System.out.println(name + " is out of garage");
     }
+
+
 }
 
 interface garageFunctionGarage extends garageFunctionMiniGarage {
-    default boolean enter(Truck truck) {
-        venicleEnter(truck);
-        return true;
-    }
+    boolean enterGarage(Truck truck);
 
-    default boolean leave(Truck truck) {
-        vehicleLeave(truck);
-        return true;
-    }
+    boolean leaveGarage();
 }
 
-interface garageFunctionBigGarage extends garageFunctionGarage {
-    default boolean enter(Vehicle vehicleFirst, Vehicle vehicleSecond) {
-        venicleEnter(vehicleFirst);
-        venicleEnter(vehicleSecond);
-        return true;
+interface garageFunctionBigGarage  {
+    boolean enterGarage(Vehicle vehicleFirst, Vehicle vehicleSecond);
+
+    boolean enterGarage(Vehicle vehicle);
+
+    boolean leaveGarage(Vehicle vehicle);
+
+    boolean leaveGarage(Vehicle vehicleFirst, Vehicle vehicleSecond);
+
+    default void vehicleEnterText(Vehicle vehicleOne, Vehicle vehicleTwo) {
+        System.out.println(vehicleOne.getClass().getSimpleName()
+                +  " and  "
+                + vehicleTwo.getClass().getSimpleName()
+                +" is parking");
     }
 
-    default boolean leave(Vehicle vehicleFirst, Vehicle vehicleSecond) {
-        vehicleLeave(vehicleFirst);
-        vehicleLeave(vehicleSecond);
-        return true;
+    default void vehicleLeaveText(String nameVehicleOne, String nameVehicleTwo) {
+        System.out.println(nameVehicleOne + " and " + nameVehicleTwo + " is out of garage");
+    }
+    default void vehicleEnterText(Vehicle vehicle) {
+        System.out.println(vehicle.getClass().getSimpleName() + " is parking");
     }
 
+    default void vehicleLeaveText(String name) {
+        System.out.println(name + " is out of garage");
+    }
 }
 
 
 class MiniGarage implements garageFunctionMiniGarage {
+    protected String vehicleName;
+    protected boolean vehicleInGarage = false;
+
+    @Override
+    public boolean enterGarage(Car car) {
+
+        if (!vehicleInGarage) {
+            this.vehicleName = car.getClass().getSimpleName();
+            vehicleEnterText(car);
+            vehicleInGarage = true;
+            return true;
+        } else {
+            System.out.println("No space in the garage. Wait when vehicle leave Garage");
+            return false;
+        }
+    }
+
+    @Override
+    public boolean leaveGarage() {
+        if (!vehicleInGarage) {
+            System.out.println("No vehicle in garage");
+            return false;
+        } else {
+            vehicleLeaveText(vehicleName);
+            vehicleInGarage = false;
+            vehicleName = "";
+            return true;
+        }
+
+    }
+
 }
 
-class Garage implements garageFunctionGarage {
+class Garage extends MiniGarage implements garageFunctionGarage {
+    @Override
+    public boolean enterGarage(Truck truck) {
+        this.vehicleName = truck.getClass().getSimpleName();
+        if (!vehicleInGarage) {
+            vehicleEnterText(truck);
+            vehicleInGarage = true;
+            return true;
+        } else {
+            System.out.println("No space in the garage. Wait when vehicle leave Garage");
+            return false;
+        }
+    }
+
+
 }
 
-class BigGarage implements garageFunctionBigGarage {
+class BigGarage  implements garageFunctionBigGarage {
+    private int countOfVehicleInGarage = 0;
+    @Override
+    public boolean enterGarage(Vehicle vehicleFirst, Vehicle vehicleSecond) {
+        if(countOfVehicleInGarage != 0){
+            System.out.println("No space in the garage. Wait when vehicle leave Garage\"");
+            return false;
+        }
+        else {
+            vehicleEnterText(vehicleFirst, vehicleSecond);
+            countOfVehicleInGarage = 2;
+            return true;
+        }
+    }
+
+    @Override
+    public boolean enterGarage(Vehicle vehicle) {
+       if(countOfVehicleInGarage == 2){
+           System.out.println("No space in the garage. Wait when vehicle leave Garage\"");
+           return false;
+       }
+       else {
+           vehicleEnterText(vehicle);
+           countOfVehicleInGarage++;
+           return true;
+       }
+    }
+
+    @Override
+    public boolean leaveGarage(Vehicle vehicle) {
+        if(countOfVehicleInGarage == 0){
+            System.out.println("No vehicle in garage");
+            return false;
+        }
+        else {
+            vehicleLeaveText(vehicle.getClass().getSimpleName());
+            countOfVehicleInGarage--;
+            return true;
+        }
+    }
+
+    @Override
+    public boolean leaveGarage(Vehicle vehicleFirst, Vehicle vehicleSecond) {
+        if(countOfVehicleInGarage < 2){
+            System.out.printf("In garage %s vehicle. Try another method",
+                    countOfVehicleInGarage == 0? "Zero" : "One");
+            return false;
+        }
+        else {
+            vehicleLeaveText(vehicleFirst.getClass().getSimpleName(),
+                    vehicleSecond.getClass().getSimpleName());
+            countOfVehicleInGarage = 0;
+            return true;
+        }
+    }
 }
