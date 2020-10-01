@@ -137,7 +137,7 @@ class BigGarage implements garageFunctionBigGarage {
 
     @Override
     public boolean leaveGarage(Vehicle vehicle) {
-        if (vehicle != tempVehicleOne || vehicle != tempVehicleTwo) {
+        if (vehicle == tempVehicleOne || vehicle == tempVehicleTwo) {
             if (vehicle == tempVehicleOne) {
                 tempVehicleOne = null;
             } else {
