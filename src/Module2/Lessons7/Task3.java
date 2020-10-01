@@ -26,9 +26,9 @@ class TestGarage {
 // big garage test
 //        bigGarage.enterGarage(car);
 //        bigGarage.enterGarage(bus);
-        bigGarage.enterGarage(truck);
-//        bigGarage.leaveGarage(car,truck);
-       bigGarage.enterGarage(car,bus);
+//        bigGarage.enterGarage(truck);
+////        bigGarage.leaveGarage(car,truck);
+//       bigGarage.enterGarage(car,bus);
 //        bigGarage.enterGarage(truck);
 //        bigGarage.leaveGarage(car);
 //        bigGarage.enterGarage(truck);
