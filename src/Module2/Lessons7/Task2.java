@@ -53,7 +53,7 @@ interface garageFunctionBigGarage {
 
 
 class MiniGarage implements garageFunctionMiniGarage {
-    private Vehicle tempVehicle;
+    protected Vehicle tempVehicle;
 
     @Override
     public boolean enterGarage(Car car) {
@@ -84,12 +84,9 @@ class MiniGarage implements garageFunctionMiniGarage {
 }
 
 class Garage extends MiniGarage implements garageFunctionGarage {
-    private Truck tempTruck;
-
     public boolean enterGarage(Truck truck) {
-
-        if (tempTruck == null) {
-            tempTruck = truck;
+        if (tempVehicle == null) {
+            tempVehicle = truck;
             vehicleEnterText(truck);
             return true;
         } else {

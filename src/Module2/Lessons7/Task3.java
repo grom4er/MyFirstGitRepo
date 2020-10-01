@@ -16,10 +16,13 @@ class TestGarage {
 //        miniGarage.enterGarage(car);
 
 //test value - mid Garage
-        garage.enterGarage(truck);
-        garage.enterGarage(car);
-        garage.leaveGarage();
-        garage.enterGarage(car);
+//        garage.enterGarage(truck);
+//        garage.enterGarage(car);
+//        garage.leaveGarage();
+//        garage.enterGarage(car);
+//        garage.enterGarage(truck);
+//        garage.enterGarage(car);
+
 //
 //        bigGarage.enterGarage(car);
 //        bigGarage.enterGarage(bus);
