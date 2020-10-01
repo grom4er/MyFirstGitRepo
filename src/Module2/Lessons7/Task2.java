@@ -104,8 +104,13 @@ class BigGarage implements garageFunctionBigGarage {
 
     @Override
     public boolean enterGarage(Vehicle vehicleFirst, Vehicle vehicleSecond) {
-        if (tempVehicleOne != null && tempVehicleTwo != null) {
-            System.out.println("No space in the garage. Wait when vehicle leave Garage\"");
+        if((tempVehicleOne == null && tempVehicleTwo != null)
+                || tempVehicleTwo == null && tempVehicleOne != null){
+            enterGarage(Math.random()<0.5? vehicleFirst : vehicleSecond);
+            return true;
+        }
+        else if (tempVehicleOne != null && tempVehicleTwo != null) {
+            System.out.println("No space in the garage. Wait when vehicle leave Garage");
             return false;
         } else {
             vehicleEnterText(vehicleFirst, vehicleSecond);
@@ -118,7 +123,7 @@ class BigGarage implements garageFunctionBigGarage {
     @Override
     public boolean enterGarage(Vehicle vehicle) {
         if (vehicle == tempVehicleOne || vehicle == tempVehicleTwo) {
-            System.out.println("This vehicle was in garage");
+            System.out.println("This vehicle already in garage");
             return false;
         } else if (tempVehicleOne != null && tempVehicleTwo != null) {
             System.out.println("Garage is full");
