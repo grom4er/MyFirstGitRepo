@@ -13,21 +13,22 @@ class TestGarage {
 //        miniGarage.enterGarage(car);
 //        miniGarage.enterGarage(new Mazda(20, "V6", 200));
 //        miniGarage.leaveGarage();
+//        miniGarage.enterGarage(car);
 
 //test value - mid Garage
-//        garage.enterGarage(truck);
-//        garage.enterGarage(car);
-//        garage.leaveGarage();
-//        garage.enterGarage(car);
-
-        bigGarage.enterGarage(car);
-        bigGarage.enterGarage(bus);
-        bigGarage.enterGarage(truck);
-        bigGarage.leaveGarage(car,bus);
-        bigGarage.enterGarage(car,bus);
-        bigGarage.enterGarage(truck);
-        bigGarage.leaveGarage(car);
-        bigGarage.enterGarage(truck);
+        garage.enterGarage(truck);
+        garage.enterGarage(car);
+        garage.leaveGarage();
+        garage.enterGarage(car);
+//
+//        bigGarage.enterGarage(car);
+//        bigGarage.enterGarage(bus);
+//        bigGarage.enterGarage(truck);
+//        bigGarage.leaveGarage(car,bus);
+//        bigGarage.enterGarage(car,bus);
+//        bigGarage.enterGarage(truck);
+//        bigGarage.leaveGarage(car);
+//        bigGarage.enterGarage(truck);
 
 
     }
