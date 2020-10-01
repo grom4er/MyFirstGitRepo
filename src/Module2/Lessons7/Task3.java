@@ -23,15 +23,17 @@ class TestGarage {
 //        garage.enterGarage(truck);
 //        garage.enterGarage(car);
 
-//
+// big garage test
 //        bigGarage.enterGarage(car);
 //        bigGarage.enterGarage(bus);
 //        bigGarage.enterGarage(truck);
-//        bigGarage.leaveGarage(car,bus);
-//        bigGarage.enterGarage(car,bus);
+//        bigGarage.leaveGarage(car,truck);
+//       bigGarage.enterGarage(car,bus);
 //        bigGarage.enterGarage(truck);
 //        bigGarage.leaveGarage(car);
 //        bigGarage.enterGarage(truck);
+//        bigGarage.leaveGarage(truck,truck);
+//        bigGarage.enterGarage(car,truck);
 
 
     }

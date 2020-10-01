@@ -130,6 +130,7 @@ class BigGarage implements garageFunctionBigGarage {
             } else {
                 tempVehicleTwo = vehicle;
             }
+            vehicleEnterText(vehicle);
             return true;
         }
     }
@@ -137,9 +138,6 @@ class BigGarage implements garageFunctionBigGarage {
     @Override
     public boolean leaveGarage(Vehicle vehicle) {
         if (vehicle != tempVehicleOne || vehicle != tempVehicleTwo) {
-            System.out.println("No this vehicle in garage");
-            return false;
-        } else {
             if (vehicle == tempVehicleOne) {
                 tempVehicleOne = null;
             } else {
@@ -148,22 +146,25 @@ class BigGarage implements garageFunctionBigGarage {
             vehicleLeaveText(vehicle.getClass().getSimpleName());
 
             return true;
+        } else {
+            System.out.println("No this vehicle in garage");
+            return false;
+
         }
     }
 
     @Override
     public boolean leaveGarage(Vehicle vehicleFirst, Vehicle vehicleSecond) {
-        if ((vehicleFirst != tempVehicleOne || vehicleFirst != tempVehicleTwo)
-                && (vehicleSecond != tempVehicleOne || vehicleSecond != tempVehicleTwo)) {
-            System.out.println("In garage not was it's vehicles. Try another method");
-            return false;
-        } else {
+        if ((vehicleFirst == tempVehicleOne || vehicleFirst == tempVehicleTwo)
+                && (vehicleSecond == tempVehicleOne || vehicleSecond == tempVehicleTwo)) {
             tempVehicleOne = null;
             tempVehicleTwo = null;
             vehicleLeaveText(vehicleFirst.getClass().getSimpleName(),
                     vehicleSecond.getClass().getSimpleName());
-
             return true;
+        } else {
+            System.out.println("In garage not was this vehicles. Try another method");
+            return false;
         }
     }
 }
