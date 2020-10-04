@@ -7,33 +7,32 @@ class TestGarage {
         VolgaBus bus = new VolgaBus(20, "v16", 20);
         MiniGarage miniGarage = new MiniGarage();
         MidGarage garage = new MidGarage();
-//        BigGarage bigGarage = new BigGarage();
+        BigGarage bigGarage = new BigGarage();
 
 //test value - mini Garage
-//        miniGarage.enterGarage(car);
-//        miniGarage.enterGarage(new Mazda(20, "V6", 200));
-//        miniGarage.leaveGarage();
-//        miniGarage.enterGarage(car);
+//        System.out.println(miniGarage.enter(car));
+//        System.out.println(miniGarage.enter(new Mazda(20, "V6", 200)));
+//        System.out.println(miniGarage.leave(car));
+//        System.out.println(miniGarage.enter(car));
 
 //test value - mid Garage
-//        garage.enterGarage(truck);
-//        garage.enterGarage(car);
-//        garage.leaveGarage();
-//        garage.enterGarage(car);
-//        garage.enterGarage(truck);
-//        garage.enterGarage(car);
+//        System.out.println(garage.enter(truck));
+//        System.out.println(garage.enter(car));
+//        System.out.println(garage.leave(truck));
+//        System.out.println(garage.enter(car));
+//        System.out.println(garage.leave(truck));
 
 // big garage test
-//        bigGarage.enterGarage(car);
-//        bigGarage.enterGarage(bus);
-//        bigGarage.enterGarage(truck);
-////        bigGarage.leaveGarage(car,truck);
-//       bigGarage.enterGarage(car,bus);
-//        bigGarage.enterGarage(truck);
-//        bigGarage.leaveGarage(car);
-//        bigGarage.enterGarage(truck);
-//        bigGarage.leaveGarage(truck,truck);
-//        bigGarage.enterGarage(car,truck);
+//        System.out.println(bigGarage.enter(car));
+//        System.out.println(bigGarage.enter(bus));
+//        System.out.println(bigGarage.enter(truck));
+//        System.out.println(bigGarage.leave(car, truck));
+//        System.out.println(bigGarage.enter(car, bus));
+//        System.out.println(bigGarage.enter(truck));
+//        System.out.println(bigGarage.leave(car));
+//        System.out.println(bigGarage.enter(truck));
+//        System.out.println(bigGarage.leave(truck, truck));
+//        System.out.println(bigGarage.enter(car, truck));
 
 
     }
