@@ -4,7 +4,6 @@ package Module2.Lessons8;
 import java.util.Arrays;
 
 class Computer {
-
     private ComputePart[] computePart = new ComputePart[4];
     private int price;
     private ComputerDevice[] computeDevice;
@@ -18,8 +17,6 @@ class Computer {
         computePart[3] = new ComputePart("Video Card");
 
     }
-
-
     public int getPrice() {
         return price;
     }
