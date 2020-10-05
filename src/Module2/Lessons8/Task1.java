@@ -5,18 +5,18 @@ import java.util.Arrays;
 
 class Computer {
 
-    private ComputePart[] computePart;
+    private ComputePart[] computePart = new ComputePart[4];
     private int price;
     private ComputerDevice[] computeDevice;
 
 
     Computer(int price) {
         this.price = price;
-        computePart = new ComputePart[]
-                {new ComputePart("HDD"),
-                        new ComputePart("MotherBoard"),
-                        new ComputePart("CPU"),
-                        new ComputePart("Video Card")};
+        computePart[0] = new ComputePart("HDD");
+        computePart[1] = new ComputePart("MotherBoard");
+        computePart[2] = new ComputePart("CPU");
+        computePart[3] = new ComputePart("Video Card");
+
     }
 
 
@@ -25,13 +25,12 @@ class Computer {
     }
 
     Computer(int price, ComputerDevice... computeDevice) {
-        this.price = price;
+        super();
         this.computeDevice = computeDevice;
-        computePart = new ComputePart[]
-                {new ComputePart("HDD"),
-                        new ComputePart("MotherBoard"),
-                        new ComputePart("CPU"),
-                        new ComputePart("Video Card")};
+        computePart[0] = new ComputePart("HDD");
+        computePart[1] = new ComputePart("MotherBoard");
+        computePart[2] = new ComputePart("CPU");
+        computePart[3] = new ComputePart("Video Card");
     }
 
     @Override
