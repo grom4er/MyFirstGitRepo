@@ -25,12 +25,8 @@ class Computer {
     }
 
     Computer(int price, ComputerDevice... computeDevice) {
-        super();
+        this(price);
         this.computeDevice = computeDevice;
-        computePart[0] = new ComputePart("HDD");
-        computePart[1] = new ComputePart("MotherBoard");
-        computePart[2] = new ComputePart("CPU");
-        computePart[3] = new ComputePart("Video Card");
     }
 
     @Override
