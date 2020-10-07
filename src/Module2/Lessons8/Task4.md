@@ -18,11 +18,11 @@ _A regular expression is a special text string for describing a search pattern._
 
 >Write about ways to create and check a regular expression.
 
-*Create*
+*Create:*
 1. String.split(regEx);
 2. Pattern and Matcher or only Matcher.
 
-*Check:
+*Check:*
 
 https://regex101.com/
 IDE: Click on a regular expression with the left mouse button. Then press ALT+ENTER. And select "Check RegExp".
