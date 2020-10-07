@@ -8,7 +8,6 @@ import java.util.regex.Pattern;
 class Task2and3 {
     static private String regexTask = "122 var3 34 2%^i 90";
 
-
     //task 2.1
 //    static {
 //        String[] text = regexTask.split("\\D+");
@@ -40,7 +39,6 @@ class Task2and3 {
 //        }
 
 //    }
-
 
 
     public static void main(String[] args) {
