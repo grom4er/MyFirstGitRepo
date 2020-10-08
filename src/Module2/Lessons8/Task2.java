@@ -28,7 +28,7 @@ class Task2and3 {
                 "\n It must contain at least 6 symbols, include numbers, letters, punctuation marks and special characters like $%# - at least one of each group.");
         Scanner sc = new Scanner(System.in);
         String userText = sc.nextLine();
-        Pattern pattern = Pattern.compile("(?=.*\\w)(?=.*\\W)(?=.*\\d)[\\w\\W]{6,}");
+        Pattern pattern = Pattern.compile("(?=.*\\w)(?=.*[^\\w\\s])(?=.*\\d).{6,}");
         Matcher matcher = pattern.matcher(userText);
         if (matcher.find()) {
             System.out.println("Password is correct");
