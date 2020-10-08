@@ -42,7 +42,7 @@ class Programmer {
         private int summary;
 
         Experience() {
-            summary = (age - 20) / 2 < 0 ? 0 : (age - 20) / 20;
+            summary = (age - 20) / 2 < 0 ? 0 : (age - 20) / 2;
         }
     }
 
