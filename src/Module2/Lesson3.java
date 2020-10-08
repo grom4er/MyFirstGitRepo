@@ -10,9 +10,9 @@ public class Lesson3 {
         Doctor doctor1 = new Doctor("Steeve", 54);
         Doctor doctor2 = new Doctor("Alex", 59);
         Doctor doctor3 = new Doctor("Renata", 52);
-        Programmer programmer1 = new Programmer("Eric", 43);
-        Programmer programmer2 = new Programmer("Rita", 28);
-        Programmer programmer3 = new Programmer("Misha", 64);
+        Module2.Lessons9.Programmer programmer1 = new Module2.Lessons9.Programmer("Eric", 43);
+        Module2.Lessons9.Programmer programmer2 = new Module2.Lessons9.Programmer("Rita", 28);
+        Module2.Lessons9.Programmer programmer3 = new Module2.Lessons9.Programmer("Misha", 64);
         builder1.build();
         builder2.workInfo();
         builder3.getName();
