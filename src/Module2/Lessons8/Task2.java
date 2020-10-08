@@ -22,22 +22,22 @@ class Task2and3 {
 //        }
 
     //task 3.1
-    static {
-
-        System.out.println("Write you password." +
-                "\n It must contain at least 6 symbols, include numbers, letters, punctuation marks and special characters like $%# - at least one of each group.");
-        Scanner sc = new Scanner(System.in);
-        String userText = sc.nextLine();
-        Pattern pattern = Pattern.compile("(?=.*\\w)(?=.*[^\\w\\s])(?=.*\\d).{6,}");
-        Matcher matcher = pattern.matcher(userText);
-        if (matcher.find()) {
-            System.out.println("Password is correct");
-        }
-        else {
-            System.out.println("Password is incorrect");
-        }
-
-    }
+//    static {
+//
+//        System.out.println("Write you password." +
+//                "\n It must contain at least 6 symbols, include numbers, letters, punctuation marks and special characters like $%# - at least one of each group.");
+//        Scanner sc = new Scanner(System.in);
+//        String userText = sc.nextLine();
+//        Pattern pattern = Pattern.compile("(?=.*\\w)(?=.*[^\\w\\s])(?=.*\\d).{6,}");
+//        Matcher matcher = pattern.matcher(userText);
+//        if (matcher.find()) {
+//            System.out.println("Password is correct");
+//        }
+//        else {
+//            System.out.println("Password is incorrect");
+//        }
+//
+//    }
 
 
     public static void main(String[] args) {
