@@ -26,10 +26,9 @@ class Task2and3 {
 //
 //        System.out.println("Write you password." +
 //                "\n It must contain at least 6 symbols, include numbers, letters, punctuation marks and special characters like $%# - at least one of each group.");
-//      //  Pattern pattern = Pattern.compile("((?=.*\\d)(?=.*)");
 //        Scanner sc = new Scanner(System.in);
 //        String userText = sc.nextLine();
-//        Pattern pattern = Pattern.compile("(?=.*\\w)(?=.*\\W)[\\w|\\W]{6,}");
+//        Pattern pattern = Pattern.compile("(?=.*\\w)(?=.*\\W)(?=.*\\d)[\\w|\\W|\\d]{6,}");
 //        Matcher matcher = pattern.matcher(userText);
 //        if (matcher.find()) {
 //            System.out.println("Password is correct");
@@ -37,11 +36,12 @@ class Task2and3 {
 //        else {
 //            System.out.println("Password is incorrect");
 //        }
-
+//
 //    }
 
 
     public static void main(String[] args) {
+
         Task2and3 task2 = new Task2and3();
     }
 }

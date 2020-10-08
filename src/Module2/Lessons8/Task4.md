@@ -5,7 +5,7 @@ _Or we could describe it as a *weak* relationship._
 
 >What is composition in java?
 
-_Aggregation in Java is a relationship between two classes. It represents part-of relationship, where  both the entities are dependent on each other._
+_Сomposition in Java is a relationship between two classes. It represents part-of relationship, where  both the entities are dependent on each other._
 _Or we could describe it as a *strong* relationship._
 
 >Could you replace one type with another? If so,which one?
