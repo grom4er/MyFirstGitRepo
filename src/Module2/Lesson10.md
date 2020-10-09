@@ -40,7 +40,7 @@ return y; } //6
 Answers:
 1) 12;
 2) 13;
-3) 14;
+3) **14;**
 4) 15;
 5) compilation error: Inexecutable code on line 4.
 
@@ -66,7 +66,7 @@ Answers:
 1) 11;
 2) 12;
 3) 13;
-4) 14;
+4) **14**;
 5) compilation error due to missing return after block finally.
 
 ### 4.
@@ -82,7 +82,7 @@ public class Quest4 extends Base{
 }
 ```
 Answers:
-1) void show (int i) throws Exception {/realisation*/}
+1) **void show (int i) throws Exception {/realisation/}**
 2) void show (long i) throws IOException {/realisation*/}
 3) void show (short i) {/realisation*/}
 4) public void show (int i) throws IOException {/realisation*/}
@@ -100,7 +100,7 @@ ioRead();
 }}
 ```
 Answers:
-1) private static void ioRead() throws IOException { };
+1) **private static void ioRead() throws IOException { };**
 2) public static void ioRead() throw IOException { };
 3) public static void ioRead() { };
 4) public static void ioRead() throws Exception { };
