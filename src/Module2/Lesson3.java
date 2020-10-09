@@ -10,22 +10,22 @@ public class Lesson3 {
         Doctor doctor1 = new Doctor("Steeve", 54);
         Doctor doctor2 = new Doctor("Alex", 59);
         Doctor doctor3 = new Doctor("Renata", 52);
-        Module2.Lessons9.Programmer programmer1 = new Module2.Lessons9.Programmer("Eric", 43);
-        Module2.Lessons9.Programmer programmer2 = new Module2.Lessons9.Programmer("Rita", 28);
-        Module2.Lessons9.Programmer programmer3 = new Module2.Lessons9.Programmer("Misha", 64);
-        builder1.build();
-        builder2.workInfo();
-        builder3.getName();
-        doctor1.heal();
-        doctor2.workInfo();
-        doctor3.getName();
-        programmer1.programming();
-        programmer2.workInfo();
-        programmer3.getName();
-        doctor1.speak();
-        doctor2.think();
-        builder1.drag();
-        programmer1.think();
+//        Module2.Lessons9.Programmer programmer1 = new Module2.Lessons9.Programmer("Eric", 43);
+//        Module2.Lessons9.Programmer programmer2 = new Module2.Lessons9.Programmer("Rita", 28);
+//        Module2.Lessons9.Programmer programmer3 = new Module2.Lessons9.Programmer("Misha", 64);
+//        builder1.build();
+//        builder2.workInfo();
+//        builder3.getName();
+//        doctor1.heal();
+//        doctor2.workInfo();
+//        doctor3.getName();
+//        programmer1.programming();
+//        programmer2.workInfo();
+//        programmer3.getName();
+//        doctor1.speak();
+//        doctor2.think();
+//        builder1.drag();
+//        programmer1.think();
 
         /*
         Question:  Can an abstract class be instantiated?
