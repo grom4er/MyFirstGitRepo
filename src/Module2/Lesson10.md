@@ -82,9 +82,9 @@ public class Quest4 extends Base{
 }
 ```
 Answers:
-1) **void show (int i) throws Exception {/realisation/}**
+1) void show (int i) throws Exception {/realisation/
 2) void show (long i) throws IOException {/realisation*/}
-3) void show (short i) {/realisation*/}
+3) **void show (short i) {/realisation/}**
 4) public void show (int i) throws IOException {/realisation*/}
 
 ### 5.
