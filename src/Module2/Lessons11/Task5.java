@@ -7,6 +7,8 @@ import java.lang.reflect.Modifier;
 //Check if your class is an static.
 public class Task5 {
 
+
+
     static void isInterface(Class checkClass) {
         System.out.printf("%s is %s Interface\n", checkClass.getSimpleName(),
                 checkClass.getModifiers() == Modifier.INTERFACE ? "" : "not");
