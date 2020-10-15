@@ -6,7 +6,7 @@ _Instances of the class Class represent classes and interfaces in a running Java
 
 > What entities in java have a Class ?
 
-_Class entities is java class or java object._
+_Any instances of any classes in runtime._
 
 
 
