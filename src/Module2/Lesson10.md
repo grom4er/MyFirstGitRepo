@@ -18,7 +18,7 @@ try { counter++;
 Answers:
 1) catch (java.io.OutputStreamException e){}; 
 2) **catch (java.io.IOException e){};**
-3) catch (java.io.OutputException e){};
+3) **catch (java.io.OutputException e){}**;
 4) finally{};
 5) return counter;
 6) return;
@@ -83,7 +83,7 @@ public class Quest4 extends Base{
 ```
 Answers:
 1) void show (int i) throws Exception {/realisation/
-2) void show (long i) throws IOException {/realisation*/}
+2) **void show (long i) throws IOException {/realisation/}**
 3) **void show (short i) {/realisation/}**
 4) public void show (int i) throws IOException {/realisation*/}
 
