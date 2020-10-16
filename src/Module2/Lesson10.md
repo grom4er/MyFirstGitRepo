@@ -18,8 +18,8 @@ try { counter++;
 Answers:
 1) catch (java.io.OutputStreamException e){}; 
 2) **catch (java.io.IOException e){};**
-3) **catch (java.io.OutputException e){}**;
-4) finally{};
+3) catch (java.io.OutputException e){};
+4) **finally{}**;
 5) return counter;
 6) return;
 
@@ -29,18 +29,18 @@ What value will be returned when calling meth (5)?
 ```
 class Quest2 {
 public int meth(int x) {
-    int y = 010; //1
-    try { y += x; //2
+    int y = 010; //1  y = 8;
+    try { y += x; //2 y = 13;
 if(x<=5) throw new Exception(); //3
-    y++; } //4 
+    y++; } //4  // y = 14
     catch(Exception e) { y--; } //5
-return y; } //6
+return y; } //6 //y = 13;
 }
 ```
 Answers:
 1) 12;
-2) 13;
-3) **14;**
+2) **13;**
+3) 14;
 4) 15;
 5) compilation error: Inexecutable code on line 4.
 

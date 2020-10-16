@@ -1,6 +1,6 @@
 package Module2.Lessons7;
 
-abstract class Vehicle {
+public abstract class Vehicle {
     private int size;
     private String enginePower;
 
@@ -8,6 +8,7 @@ abstract class Vehicle {
         this.size = size;
         this.enginePower = enginePower;
     }
+
 
     public int getSize() {
         return size;

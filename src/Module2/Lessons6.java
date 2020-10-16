@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 /**
  * (we can change any Parameter)
- * Let apartment have max is 200
+ * Let apartment have max value is 200
  * Let floor be max 14
  * Let numbers of rooms be max 6
  * let life time of home be min 25 and max is 125
