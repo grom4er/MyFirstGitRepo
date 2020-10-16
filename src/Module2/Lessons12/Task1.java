@@ -17,9 +17,9 @@ class Triple<T1, T2, T3> {
     @Override
     public String toString() {
         return "Triple{" +
-                "first=" + first +
-                ", second=" + second +
-                ", third=" + third +
+                "\nFirst type is " + first.getClass().getSimpleName() + " value is " + first.toString() +
+                ",\n Second type is " + second.getClass().getSimpleName()  + " value is " + second.toString() +
+                ",\n Third type is" + third.getClass().getSimpleName() + " value is " + third.toString() +
                 '}';
     }
 }
