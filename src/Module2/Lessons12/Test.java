@@ -1,9 +1,12 @@
 package Module2.Lessons12;
 
+import Module2.Lessons7.Vehicle;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Test {
+
     public static void main(String[] args) {
         //task1
         Triple<String, Integer, Boolean> test1 = new Triple<>("String", 12, true);
@@ -31,5 +34,6 @@ public class Test {
         Task3.printOnlyInteger(list);
         Task3.printAnyList(list);
         Task3.printAnyList(listTest);
+
     }
 }

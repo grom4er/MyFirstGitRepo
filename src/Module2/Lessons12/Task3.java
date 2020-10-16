@@ -19,7 +19,6 @@ public class Task3 {
     }
      static void printAnyList(List<?> list)
     {
-
         System.out.println(list);
     }
 }
