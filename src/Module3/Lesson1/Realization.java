@@ -1,7 +1,7 @@
 package Module3.Lesson1;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 
@@ -19,10 +19,8 @@ public class Realization {
             , "7. back to robot configuration speed"
             , "8. Exit"
             , "99. Joke"}; // menu
-    static ArrayList<String> list = new ArrayList<>();
-    static String bookToArray = ""; // String, where i have all books.
-    static String bookToArrayUpdate; // Crutch
-    static String noBook = "Sorry, but in my library no one book. Add first."; // to stop dublicate
+    private static ArrayList<String> list = new ArrayList<>();
+    private static String noBook = "Sorry, but in my library no one book. Add first."; // to stop dublicate
 
 
     public static void start() { // Method to start.
@@ -78,7 +76,7 @@ public class Realization {
                     break;
                 case "4":
                     System.out.println();
-                    if (bookToArray.length() <= 1) {
+                    if (list.isEmpty()) {
                         robot(noBook);
                     } else {
                         showBooks();
@@ -96,7 +94,7 @@ public class Realization {
                         robot(noBook);
                     } else {
                         robot("Books are sorted. Please, check it in menu \"4\" ");
-                        Arrays.sort(bookToArray.split(","));
+                        Collections.sort(list);
                     }
                     break;
                 case "7":
@@ -220,7 +218,7 @@ public class Realization {
     static void addBook() {
         while (true) {
             robot("*robot sounds*, you choice add book. Write book name:");
-            list.add(checkNameBook());
+            list.add(checkNameBookAndAdd());
             while (true) {
                 robot("Do you want add more books? Write Y or N like always");
                 stopDublicateCode();
@@ -235,7 +233,7 @@ public class Realization {
         }
     }
 
-    static String checkNameBook() {
+    static String checkNameBookAndAdd() {
         String check;
         while (true) {
             robot("Remember, books has Rules:");
@@ -250,7 +248,7 @@ public class Realization {
             char[] temp = check.toCharArray();
             if (check.length() == 2
                     && Character.isLetter(temp[0])) {
-                robot("*bi-bip souns* Book is add");
+                robot("*bi-bip sounds* Book is add");
                 break;
             } else if (check.length() > 2) {
                 int tempCountSymbol = 0;
@@ -264,6 +262,7 @@ public class Realization {
                 }
                 if (tempCountSymbol < tempCountLetter) {
                     robot("Book is add");
+                    break;
                 }
             }
             errorRobotSay();
@@ -283,7 +282,7 @@ public class Realization {
     }
 
     static void stopDublicateCode() {
-        System.err.print("\nWrite here:");
+        System.err.print("\n\nWrite here:");
     }
 
 
@@ -301,7 +300,7 @@ public class Realization {
                     robot(String.format("Book number %d cannot be delete", choice));
                     continue;
                 }
-                list.remove(choice + 1);
+                list.remove(choice-1);
                 break;
             }
             robot("Book was deleted");
@@ -343,7 +342,7 @@ public class Realization {
             }
             System.out.println();
             robot("Now write new name of book");
-            list.set(choice+1,checkNameBook());
+            list.set(choice-1, checkNameBookAndAdd());
             stopDublicateCode();
             robot("Do you want change more books? Write Y or N like always");
             System.out.println();
@@ -403,14 +402,11 @@ public class Realization {
         robot("Write name book what you wanna find");
         stopDublicateCode();
         String bookCheck = sc.nextLine().trim();
-        String[] tempArray = bookToArray.split(",");
-        for (String checkName : tempArray) {
-            if (checkName.equalsIgnoreCase(bookCheck)) {
-                robot("I find you book!");
-                return;
-            }
+        if (checkLibary(bookCheck)) {
+            robot("I find you book!");
+            return;
         }
-        robot("Sorry, but you book not find here");
+        robot("Sorry, i don't find you book");
     }
 
     static boolean checkBookInLibary(String bookName) {
@@ -419,7 +415,6 @@ public class Realization {
         }
 
         if (checkLibary(bookName)) {
-            robot("Sorry, but this book i have");
             robot("Please, write another book");
             return true;
         }

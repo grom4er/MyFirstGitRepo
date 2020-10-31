@@ -1,5 +1,4 @@
 package Module3.Lesson1;
-
 import java.util.Scanner;
 
 public class Module01 {
