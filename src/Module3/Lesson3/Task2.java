@@ -53,7 +53,7 @@ public class Task2 {
         for (int i = min; i < 11; i++) {
             if (exponent > 0) {
                 createTableAndPutInList(maxValue, exponent - 1, i,
-                        value + heroToZero(i) * Task1.powMath(10, exponent));
+                        value + heroToZero(i) * cache[10][exponent]);
             } else {
                 if (value + heroToZero(i) > maxValue || value + heroToZero(i) == 0) {
                     continue;
