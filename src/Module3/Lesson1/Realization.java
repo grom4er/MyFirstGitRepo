@@ -8,15 +8,15 @@ import java.util.Scanner;
 public class Realization {
     private static Scanner sc = new Scanner(System.in); // 1 scanner for all aplication
     private static String userName; // for safe user name
-    private static String robotText; // for print robot
-    static int timeRobot = 3; // time robot, important to pause
+    private static String robotText; // for print robotTextSay
+    static int timeRobot = 3; // time robotTextSay, important to pause
     private static String[] menu = {"1. Add book"
             , "2. Delete book"
             , "3. Change name book"
             , "4. Show all books"
             , "5. Find book"
             , "6. Sort books by names"
-            , "7. back to robot configuration speed"
+            , "7. back to robotTextSay configuration speed"
             , "8. Exit"
             , "99. Joke"}; // menu
     private static ArrayList<String> list = new ArrayList<>();
@@ -29,25 +29,25 @@ public class Realization {
     }
 
     public static void robotHello() {
-        robot("Hello. My name is DestroyerWorld2000. A am librarian.");
-        robot("So, what is you name? Please write it:");
+        robotTextSay("Hello. My name is DestroyerWorld2000. A am librarian.");
+        robotTextSay("So, what is you name? Please write it:");
         stringCheckUserName();
-        robot(String.format("So, i glad to see you %s", userName));
-        robot("I help you in library, but first you need help me.");
-        robot("Like you see, i  cool robot. But you just are human!");
-        robot("So, you can - write me speed how i will talk with you.");
-        robot("It must be second from 3-20 and an integer");
-        robot("So, all it time before we talk on speed 3.");
+        robotTextSay(String.format("So, i glad to see you %s", userName));
+        robotTextSay("I help you in library, but first you need help me.");
+        robotTextSay("Like you see, i  cool robotTextSay. But you just are human!");
+        robotTextSay("So, you can - write me speed how i will talk with you.");
+        robotTextSay("It must be second from 3-20 and an integer");
+        robotTextSay("So, all it time before we talk on speed 3.");
         robotSpeedChange();
     }
 
     static void menuOfProgram() {
         while (true) {
-            robot(String.format("*Robot sounds*, now we in menu of my library %s. Choice menu:", userName == null ? "Guest" : userName)); // check for test/start option
+            robotTextSay(String.format("*Robot sounds*, now we in menu of my library %s. Choice menu:", userName == null ? "Guest" : userName)); // check for test/start option
             pause(timeRobot);
             showMenu();
             pause(timeRobot + 2);
-            robot("*Robot sounds*, what menu you want to use? Write number");
+            robotTextSay("*Robot sounds*, what menu you want to use? Write number");
             menu(); //start main method for menu
         }
     }
@@ -73,18 +73,18 @@ public class Realization {
                     findBookMenu();
                     break;
                 case "6":
-                    robot("Books are sorted. Please, check it in menu \"4\" ");
+                    robotTextSay("Books are sorted. Please, check it in menu \"4\" ");
                     Collections.sort(list);
                     break;
                 case "7":
                     robotSpeedChange();
                     break;
                 case "8":
-                    robot(String.format("Thanks for coming %s. Goodbye.", userName == null ? "Guest" : userName));
+                    robotTextSay(String.format("Thanks for coming %s. Goodbye.", userName == null ? "Guest" : userName));
                     System.exit(0);
                     break;
                 case "99":
-                    robot("The man bought a hat, and she just right for him");
+                    robotTextSay("The man bought a hat, and she just right for him");
                     break;
                 case "menu":
                     showMenu();
@@ -93,13 +93,13 @@ public class Realization {
                 default:
                     errorRobotSay();
             }
-            robot("Write you choice number of menu");
-            robot("If you forgot the menu, just write \"menu\"");
+            robotTextSay("Write you choice number of menu");
+            robotTextSay("If you forgot the menu, just write \"menu\"");
             System.out.println();
         }
     }
 
-    public static void robot(String robotText) {
+    public static void robotTextSay(String robotText) {
         pause(timeRobot);
         System.out.println("\n".repeat(12));
         Realization.robotText = String.format("     ,_,_,     \r\n     \\O O/     \r\n     /_E_\\     ---- %s  \r\n()ooo|\\=/|ooo()\r\n     |___|    \r\n     /| |\\     \r\n    [_] [_] ", robotText);
@@ -131,30 +131,30 @@ public class Realization {
 
     static void robotSpeedChange() {
         System.out.println();
-        robot("You want to change my speed? Write y if yes or write n if no");
+        robotTextSay("You want to change my speed? Write y if yes or write n if no");
         while (true) {
             stopDublicateCode();
             String answer = sc.nextLine().trim();
             if (answer.equalsIgnoreCase("n")) {
-                robot(String.format("You don't change anything, speed still is : %d", timeRobot));
+                robotTextSay(String.format("You don't change anything, speed still is : %d", timeRobot));
                 return;
             } else if (answer.equalsIgnoreCase("y")) {
                 while (true) {
-                    robot("*Robot sounds*, what speed you want?");
+                    robotTextSay("*Robot sounds*, what speed you want?");
                     stopDublicateCode();
                     int check = checkDigit();
                     if (check >= 3 && check <= 20) {
                         timeRobot = check;
-                        robot(String.format("*Robot sounds*, now my speed is: %d", timeRobot));
+                        robotTextSay(String.format("*Robot sounds*, now my speed is: %d", timeRobot));
                         return;
                     } else {
                         errorRobotSay();
-                        robot("Like i said before, it must be 3 or more where max is 20");
+                        robotTextSay("Like i said before, it must be 3 or more where max is 20");
                     }
                 }
             } else {
                 errorRobotSay();
-                robot("You want to change my speed? Write y if yes or write n if no");
+                robotTextSay("You want to change my speed? Write y if yes or write n if no");
             }
         }
     }
@@ -194,10 +194,10 @@ public class Realization {
 
     static void addBook() {
         while (true) {
-            robot("*robot sounds*, you choice add book. Write book name:");
-            list.add(checkNameBookAndAdd());
+            robotTextSay("*robotTextSay sounds*, you choice add book. Write book name:");
+            list.add(checkNameBookAndTakeIt());
             while (true) {
-                robot("Do you want add more books? Write Y or N like always");
+                robotTextSay("Do you want add more books? Write Y or N like always");
                 stopDublicateCode();
                 String answ = sc.nextLine().trim();
                 if (answ.equalsIgnoreCase("n")) {
@@ -210,22 +210,22 @@ public class Realization {
         }
     }
 
-    static String checkNameBookAndAdd() {
+    static String checkNameBookAndTakeIt() {
         String check;
         while (true) {
-            robot("Remember, books has Rules:");
+            robotTextSay("Remember, books has Rules:");
             rulesBooksName();
-            System.out.println();
             stopDublicateCode();
             check = sc.nextLine().trim();
-            if (checkBookInLibrary(check)) {
-                robot("Book already have in library");
+            if (list.isEmpty() || findBookInLibrary(check)) { // В случаях пустого списка, не требуется делать проверку.
+                robotTextSay("Book already have in library");
+                robotTextSay("Please, write another book");
                 continue;
             }
             char[] temp = check.toCharArray();
             if (check.length() == 2
                     && Character.isLetter(temp[0])) {
-                robot("*bi-bip sounds* Book is add");
+                robotTextSay("*bi-bip sounds* Book is add");
                 break;
             } else if (check.length() > 2) {
                 int tempCountSymbol = 0;
@@ -238,7 +238,7 @@ public class Realization {
                     }
                 }
                 if (tempCountSymbol < tempCountLetter) {
-                    robot("Book is add");
+                    robotTextSay("Book is add");
                     break;
                 }
             }
@@ -265,38 +265,38 @@ public class Realization {
 
     static void deleteBook() {
         if (list.isEmpty()) {
-            robot(NO_BOOK);
+            robotTextSay(NO_BOOK);
             return;
         }
         while (true) {
-            robot("*Robot sounds*, you choice delete book. I show you list of books");
+            robotTextSay("*Robot sounds*, you choice delete book.");
             showBooks();
             pause(timeRobot + 2);
-            robot("Just write number of book you want to delete");
+            robotTextSay("Just write number of book you want to delete");
             stopDublicateCode();
             while (true) {
                 int choice = checkDigit();
                 if (choice <= 0 || choice > list.size()) {
                     errorRobotSay();
-                    robot(String.format("Book number %d cannot be delete", choice));
+                    robotTextSay(String.format("Book number %d cannot be delete", choice));
                     continue;
                 }
                 list.remove(choice - 1);
                 break;
             }
-            robot("Book was deleted");
+            robotTextSay("Book was deleted");
             if (list.isEmpty()) {
-                robot("Sorry, books are over");
+                robotTextSay("Sorry, books are over");
                 return;
             }
             while (true) {
-                robot("Do you want delete more books? Write Y or N like always");
+                robotTextSay("Do you want delete more books? Write Y or N like always");
                 System.out.println();
                 stopDublicateCode();
-                String answ = sc.nextLine().trim();
-                if (answ.equalsIgnoreCase("n")) {
+                String answer = sc.nextLine().trim();
+                if (answer.equalsIgnoreCase("n")) {
                     return;
-                } else if (answ.equalsIgnoreCase("y")) {
+                } else if (answer.equalsIgnoreCase("y")) {
                     continue;
                 }
                 errorRobotSay();
@@ -306,30 +306,30 @@ public class Realization {
 
     static void changeBookName() {
         if (list.isEmpty()) {
-            robot(NO_BOOK);
+            robotTextSay(NO_BOOK);
             return;
         }
         while (true) {
-            robot("*Robot sounds*, you choice change name book. I show you list of books");
+            robotTextSay("*Robot sounds*, you choice change name book. I show you list of books");
             showBooks();
             pause(timeRobot + 2);
-            robot("Just write number of book you want to change");
+            robotTextSay("Just write number of book you want to change");
             stopDublicateCode();
             int choice;
             while (true) {
                 choice = checkDigit();
                 if (choice <= 0 || choice > list.size()) {
                     errorRobotSay();
-                    robot(String.format("Book number %d cannot be change", choice));
+                    robotTextSay(String.format("Book number %d cannot be change", choice));
                     continue;
                 }
                 break;
             }
             System.out.println();
-            robot("Now write new name of book");
-            list.set(choice - 1, checkNameBookAndAdd());
+            robotTextSay("Now write new name of book");
+            list.set(choice - 1, checkNameBookAndTakeIt());
             stopDublicateCode();
-            robot("Do you want change more books? Write Y or N like always");
+            robotTextSay("Do you want change more books? Write Y or N like always");
             System.out.println();
             stopDublicateCode();
             while (true) {
@@ -345,18 +345,18 @@ public class Realization {
     }
 
     static void findBookMenu() {
-        robot("*Robot sounds*, you choice find book.");
+        robotTextSay("*Robot sounds*, you choice find book.");
         while (true) {
-            robot("I can show you all books or you can write name of book");
-            robot("Write \"show\", and i just show you books");
-            robot("Or write  \"find\", and i try find it");
+            robotTextSay("I can show you all books or you can write name of book");
+            robotTextSay("Write \"show\", and i just show you books");
+            robotTextSay("Or write  \"find\", and i try find it");
             System.out.println();
             stopDublicateCode();
             String choiceToFind = sc.nextLine().trim();
             if (choiceToFind.equalsIgnoreCase("show")) {
                 showBooks();
                 pause(2);
-                robot("Do you want find more books? Y or N like always");
+                robotTextSay("Do you want find more books? Y or N like always");
                 stopDublicateCode();
                 choiceToFind = sc.nextLine().trim();
                 if (choiceToFind.equalsIgnoreCase("n")) {
@@ -365,11 +365,11 @@ public class Realization {
                     continue;
                 } else {
                     errorRobotSay();
-                    robot("I back you to menu 5");
+                    robotTextSay("I back you to menu 5");
                 }
             } else if (choiceToFind.equalsIgnoreCase("find")) {
                 findBook();
-                robot("Do you want find more books? Y or N like always");
+                robotTextSay("Do you want find more books? Y or N like always");
                 stopDublicateCode();
                 choiceToFind = sc.nextLine().trim();
                 if (choiceToFind.equalsIgnoreCase("n")) {
@@ -384,25 +384,17 @@ public class Realization {
 
     static void findBook() {
         System.out.println();
-        robot("Write name book what you wanna find");
+        robotTextSay("Write name book what you wanna find");
         stopDublicateCode();
         String bookCheck = sc.nextLine().trim();
-        if (checkLibary(bookCheck)) {
-            robot("I find you book!");
+        if (findBookInLibrary(bookCheck)) {
+            robotTextSay("I find you book!");
             return;
         }
-        robot("Sorry, i don't find you book");
+        robotTextSay("Sorry, i don't find you book");
     }
 
-    static boolean checkBookInLibrary(String bookName) {
-        if (checkLibary(bookName)) {
-            robot("Please, write another book");
-            return true;
-        }
-        return false;
-    }
-
-    private static boolean checkLibary(String bookNameCheck) {
+    private static boolean findBookInLibrary(String bookNameCheck) {
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).equalsIgnoreCase(bookNameCheck)) {
                 return true;
@@ -412,15 +404,15 @@ public class Realization {
     }
 
     static void errorRobotSay() {
-        robot("Sorry, you do mistake. Please try again");
+        robotTextSay("Sorry, you do mistake. Please try again");
     }
 
     static void showBooks() {
-        robot("Now i show you books in library");
+        robotTextSay("Now i show you books in library");
         pause(timeRobot);
         System.out.println("\n".repeat(12));
         if (list.isEmpty()) {
-            robot(NO_BOOK);
+            robotTextSay(NO_BOOK);
         } else {
             System.out.println("Books in library:");
             for (int i = 0; i < list.size(); i++) {
