@@ -20,7 +20,7 @@ public class Realization {
             , "8. Exit"
             , "99. Joke"}; // menu
     private static ArrayList<String> list = new ArrayList<>();
-    private static String noBook = "Sorry, but in my library no one book. Add first."; // to stop dublicate
+    private static final String NO_BOOK = "Sorry, but in my library no one book. Add first."; // to stop dublicate
 
 
     public static void start() { // Method to start.
@@ -61,41 +61,20 @@ public class Realization {
                     addBook();
                     break;
                 case "2":
-                    if (list.isEmpty()) {
-                        robot("Sorry, but in my library no one book. Add first.");
-                    } else {
-                        deleteBook();
-                    }
+                    deleteBook();
                     break;
                 case "3":
-                    if (list.isEmpty()) {
-                        robot(noBook);
-                    } else {
-                        changeBookName();
-                    }
+                    changeBookName();
                     break;
                 case "4":
-                    System.out.println();
-                    if (list.isEmpty()) {
-                        robot(noBook);
-                    } else {
-                        showBooks();
-                    }
+                    showBooks();
                     break;
                 case "5":
-                    if (list.isEmpty()) {
-                        robot(noBook);
-                    } else {
-                        findBookMenu();
-                    }
+                    findBookMenu();
                     break;
                 case "6":
-                    if (list.isEmpty()) {
-                        robot(noBook);
-                    } else {
-                        robot("Books are sorted. Please, check it in menu \"4\" ");
-                        Collections.sort(list);
-                    }
+                    robot("Books are sorted. Please, check it in menu \"4\" ");
+                    Collections.sort(list);
                     break;
                 case "7":
                     robotSpeedChange();
@@ -118,8 +97,6 @@ public class Realization {
             robot("If you forgot the menu, just write \"menu\"");
             System.out.println();
         }
-
-
     }
 
     public static void robot(String robotText) {
@@ -241,8 +218,8 @@ public class Realization {
             System.out.println();
             stopDublicateCode();
             check = sc.nextLine().trim();
-            if (checkBookInLibary(check)) {
-                robot("Book already have in libary");
+            if (checkBookInLibrary(check)) {
+                robot("Book already have in library");
                 continue;
             }
             char[] temp = check.toCharArray();
@@ -287,6 +264,10 @@ public class Realization {
 
 
     static void deleteBook() {
+        if (list.isEmpty()) {
+            robot(NO_BOOK);
+            return;
+        }
         while (true) {
             robot("*Robot sounds*, you choice delete book. I show you list of books");
             showBooks();
@@ -300,7 +281,7 @@ public class Realization {
                     robot(String.format("Book number %d cannot be delete", choice));
                     continue;
                 }
-                list.remove(choice-1);
+                list.remove(choice - 1);
                 break;
             }
             robot("Book was deleted");
@@ -324,6 +305,10 @@ public class Realization {
     }
 
     static void changeBookName() {
+        if (list.isEmpty()) {
+            robot(NO_BOOK);
+            return;
+        }
         while (true) {
             robot("*Robot sounds*, you choice change name book. I show you list of books");
             showBooks();
@@ -342,7 +327,7 @@ public class Realization {
             }
             System.out.println();
             robot("Now write new name of book");
-            list.set(choice-1, checkNameBookAndAdd());
+            list.set(choice - 1, checkNameBookAndAdd());
             stopDublicateCode();
             robot("Do you want change more books? Write Y or N like always");
             System.out.println();
@@ -409,16 +394,11 @@ public class Realization {
         robot("Sorry, i don't find you book");
     }
 
-    static boolean checkBookInLibary(String bookName) {
-        if (list.isEmpty()) {
-            return false;
-        }
-
+    static boolean checkBookInLibrary(String bookName) {
         if (checkLibary(bookName)) {
             robot("Please, write another book");
             return true;
         }
-
         return false;
     }
 
@@ -439,31 +419,17 @@ public class Realization {
         robot("Now i show you books in library");
         pause(timeRobot);
         System.out.println("\n".repeat(12));
-        System.out.println("Books in library:");
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println(1 + i + " # of book  is " + list.get(i));
-        }
-        System.out.println();
-        pause(timeRobot);
-    }
-
-    static boolean checkNullLibrary() {
-        return list.size() == 0 ? true : false; // to stop duplicate code
-    }
-
-    static int checkNumberOfBook(int userNumber, int tempLength) {
-        while (true)
-            if (userNumber <= 0 || userNumber > tempLength) {
-                errorRobotSay();
-                stopDublicateCode();
-                userNumber = checkDigit();
-                continue;
-            } else {
-                break;
+        if (list.isEmpty()) {
+            robot(NO_BOOK);
+        } else {
+            System.out.println("Books in library:");
+            for (int i = 0; i < list.size(); i++) {
+                System.out.println(1 + i + " # of book  is " + list.get(i));
             }
-        return userNumber;
+            System.out.println();
+            pause(timeRobot);
+        }
     }
-
 }
 
 
